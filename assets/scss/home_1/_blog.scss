@@ -1,0 +1,135 @@
+.ax-blog1-sec {
+	.ax-wc1-top {
+		gap: 20px;
+		.ax-sec-title {
+			max-width: 670px;
+		}
+	}
+}
+
+.ax-blog1-content {
+	display: grid;
+	gap: 30px 10px;
+	grid-template-columns: 1fr 1fr 1fr;
+	@media #{$md,$sm,$xs,$xxs} {
+		grid-template-columns: 1fr 1fr;
+	}
+	@media #{$sm,$xs,$xxs} {
+		grid-template-columns: 1fr;
+	}
+}
+
+.ax-blog1-item {
+	margin: 0 auto;
+	max-width: 460px;
+	.item-img {
+		overflow: hidden;
+		border-radius: 16px;
+		margin-bottom: 24px;
+		img {
+			transform: scale(1.2);
+			transition: all 500ms ease-in-out;
+		}
+	}
+	.item-text {
+		.item-meta {
+			margin-bottom: 15px;
+			a {
+				font-size: 13px;
+				color: #0D1B2A;
+				font-weight: 500;
+				margin-right: 5px;
+				padding: 4px 12px;
+				border-radius: 4px;
+				background: #10ECB085;
+				letter-spacing: -.15px;
+				&:nth-child(2) {
+					background-color: #F1F3F5;
+				}
+			}
+		}
+		.blg_title {
+			font-size: 22px;
+			font-weight: 500;
+			margin-bottom: 12px;
+			@media #{$lg} {
+				font-size: 20px;
+			}
+			&:hover {
+				color: var(--ax-color2);
+			}
+		}
+		.read_more {
+			gap: 10px;
+			display: flex;
+			max-width: 432px;
+			align-items: center;
+			justify-content: space-between ;
+			span {
+				opacity: .64;
+				color: #0C0019;
+				white-space: nowrap;
+				transition: all 400ms ease-in-out;
+			}
+			b {
+				width: 62%;
+				height: 1px;
+				opacity: .2;
+				background-color: #0C0019;
+				transition: all 400ms ease-in-out;
+				@media #{$xxs} {
+					display: none;
+				}
+			}
+			i {
+				width: 40px;
+				height: 40px;
+				display: flex;
+				border-radius: 100%;
+				align-items: center;
+				background: #F1F3F5;
+				justify-content: center;
+				transform: rotate(-45deg);
+				color: var(--ax-title-color);
+				transition: all 400ms ease-in-out;
+			}
+			&:hover {
+				span {
+					opacity: 1;
+				}
+				b {
+					opacity: 1;
+					&:before {
+						width: 100%;
+					}
+				}
+				i {
+					color: #000;
+					background-color: var(--ax-prime-c);
+				}
+			}
+		}
+	}
+	&:hover {
+		.item-img {
+			img {
+				transform: scale(1.0);
+			}
+		}
+	}
+}
+
+.ax-blg-btn {
+	z-index: 1;
+	height: 88px;
+	.ax-btn-shape {
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+	.ax-btn1 {
+		a {
+			background: #0D1B2A;
+		}
+	}
+}

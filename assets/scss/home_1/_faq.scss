@@ -1,0 +1,136 @@
+.ax-faq1-sec {
+	z-index: 5;
+	position: relative;
+	background-color: #BDFFED;
+	backdrop-filter: blur(96px);
+	.ax-faq1-bg {
+		left: 0;
+		bottom: 0;
+		z-index: -1;
+		opacity: .6;
+		mix-blend-mode: luminosity;
+	}
+	.ax-faq-circle {
+		-webkit-animation-name: spin;
+		animation-name: spin;
+		-webkit-animation-duration: 5000ms;
+		animation-duration: 5000ms;
+		-webkit-animation-iteration-count: infinite;
+		animation-iteration-count: infinite;
+		-webkit-animation-timing-function: linear;
+		animation-timing-function: linear;
+	}
+}
+
+.ax-faq1-content {
+	margin: 0 auto;
+	max-width: 870px;
+	margin-top: 50px;
+	border-top: 1px solid #0D1B2A;
+	.accordion-item,
+	.accordion-button {
+		background-color: transparent;
+		transition: all 200ms ease-in-out;
+	}
+	.accordion-item {
+		border: none;
+		padding: 35px 0px;
+		position: relative;
+		padding-left: 44px;
+		transition: all 200ms ease-in-out;
+		border-bottom: 1px solid rgba(13, 27, 42, .12);
+		@media #{$xxs} { 
+			padding: 23px 15px 23px 15px;
+		}
+	}
+	.accordion-button {
+		padding: 0;
+		border: none;
+		margin: 0 auto;
+		font-size: 22px;
+		font-weight: 600;
+		position: relative;
+		font-family: var(--ax-mona);
+		@media #{$md,$sm,$xs,$xxs} {
+			padding: 20px 0px;
+		}
+		i {
+			opacity: .5;
+			margin-left: -40px;
+			margin-right: 18px;
+			transition: all 500ms ease-in-out;
+			@media #{$xxs} { 
+				margin-left: 0;
+				margin-right: 10px;
+			}
+		}
+		span {
+			max-width: 85%;
+			display: inline-block;
+		}
+	}
+
+	.accordion-button:focus {
+		box-shadow: none;
+	}
+	.accordion-body {
+		padding: 0;
+		font-size: 18px;
+		transition: all 500ms ease-in-out;
+		.bi-faq-text {
+			opacity: .8;
+			color: #0D1B2A;
+			max-width: 730px;
+			padding-top: 22px;
+		}
+	}
+	.accordion-button::after {
+		top: -8px;
+		right: 00px;
+		opacity: .7;
+		width: 44px;
+		height: 44px;
+		display: flex;
+		font-size: 18px;
+		content: '\2b';
+		font-weight: 900;
+		position: absolute;
+		border-radius: 100%;
+		align-items: center;
+		background-image: none;
+		justify-content: center;
+		color: #0D1B2A;
+		border-radius: 8px;
+		background: #2A2A2A14;
+		font-family: 'Font Awesome 6 free';
+		transition: all 400ms ease;
+		backdrop-filter: blur(8px);
+		@media #{$xxs} {
+			top: 50%;
+			right: 0px;
+			width: auto;
+			height: auto;
+			transform: translateY(-50%);
+			background-color: transparent;
+		}
+	}
+	.accordion-button:not(.collapsed) { 
+		color: #000000;
+		box-shadow: none;
+		span {
+			color: #000000;
+		}
+		i {
+			opacity: 1;
+		}
+		&:after {
+			opacity: 1;
+			color: #0D1B2A;
+			content: '\f068';
+			background-color: var(--ax-prime-c);
+			@media #{$xxs} {
+				background-color: transparent;
+			}
+		}
+	}
+}

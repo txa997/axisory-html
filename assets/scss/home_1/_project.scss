@@ -1,0 +1,127 @@
+.ax-cs-slider {
+	margin-right: -485px;
+	@media #{$lg,$md,$sm,$xs,$xxs} {
+		margin-right: 0;
+	}
+}
+.ax-cs-item {
+	height: 501px;
+	margin: 0 auto;
+	overflow: hidden;
+	max-width: 608px;
+	position: relative;
+	&:before {
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		content: '';
+		z-index: 2;
+		height: 0px;
+		position: absolute;
+		border-bottom-left-radius: 16px;
+		border-bottom-right-radius: 16px;
+		transition: all 500ms ease-in-out;
+		background: linear-gradient(180deg, rgba(1, 54, 255, 0) 0%, #012099 100%);
+	}
+	.item-img-meta {
+		height: 400px;
+		overflow: hidden;
+		border-radius: 16px;
+		margin-bottom: 18px;
+		transition: all 500ms ease-in-out;
+		.item-img {
+			transition: all 500ms ease-in-out;
+			background-color: var(--ax-title-color);
+			img {
+				transition: all 500ms ease-in-out;
+			}
+		}
+		.item-meta {
+			top: 24px;
+			left: 24px;
+			padding: 5px 13px;
+			border-radius: 6px;
+			position: absolute;
+			background-color: var(--ax-title-color);
+			a {
+				color: #fff;
+				font-size: 14px;
+				position: relative;
+				margin-right: 13px;
+				&:last-child {
+					margin-right: 0;
+					&:before {
+						display: none;
+					}
+				}
+				&:before {
+					top: 0;
+					right: -12px;
+					content: '/';
+					position: absolute;
+					color: var(--ax-prime-c);
+				}
+			}
+		}
+		
+	}
+	.item-text {
+		left: 0;
+		bottom: 0;
+		z-index: 3;
+		position: absolute;
+		transition: all 500ms ease-in-out;
+		h3 {
+			font-size: 24px;
+			font-weight: 600;
+			padding-bottom: 8px;
+		}
+		p {
+			transition: all 500ms ease-in-out;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+		}
+	}
+	&:hover {
+		&:before {
+			height: 241px;
+			transition-delay: 150ms;
+		}
+		.item-img-meta {
+			height: 501px;
+			.item-img {
+				img {
+					mix-blend-mode: luminosity;
+				}
+			}
+		}
+		.item-text {
+			left: 40px;
+			right: 15px;
+			bottom: 40px;
+			h3,p {
+				color: #fff;
+			}
+		}
+	}
+}
+
+.ax-cs-pagi {
+	.swiper-pagination-bullet {
+		width: 8px;
+		opacity: 1;
+		height: 8px;
+		opacity: .16;
+		border-radius: 40px;
+		transition: all 500ms ease-in-out;
+		background-color: var(--ax-title-color);
+		&:is(.swiper-pagination-bullet-active) {
+			opacity: 1;
+			height: 8px;
+			width: 44px;
+			background-color: #1457C7;
+		}
+	}
+}

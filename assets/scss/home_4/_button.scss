@@ -1,0 +1,73 @@
+/*
+    05. button
+*/
+
+
+/* 
+    button-start
+*/
+
+.as-offcanvas-btn-1 {
+    width: 80px;
+    height: 80px;
+    font-size: 24px;
+    background: var(--as-clr-sd-1);
+    color: var(--as-clr-h-1);
+    border: none;
+}
+
+
+
+.as-pr-btn-1 {
+    font-family: var(--as-font-1);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 4px 0;
+    padding-left: 25px;
+    position: relative;
+    z-index: 1;
+    color: #fff;
+
+    &::after {
+        content: "";
+        width: calc(100% - 36px);
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: var(--as-clr-pr-1);
+        border-radius: 200px;
+        z-index: -1;
+    }
+
+    .icon {
+        width: 48px;
+        height: 48px;
+        background: #FFFFFF;
+        box-shadow: inset 0px 0px 5px var(--as-clr-pr-1);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 20px;
+        color: var(--as-clr-pr-1);
+        transition: var(--as-cube-1);
+        outline: 4px solid var(--as-clr-pr-1);
+    }
+}
+
+
+.as-plybtn-1 {
+    font-size: 16px;
+    color: #fff;
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+}
+/* 
+    button-end
+*/

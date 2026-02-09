@@ -1,0 +1,244 @@
+.ax-team-sec {
+	.container {
+		max-width: 1584px;
+	}
+}
+
+.ax-team-content {
+	z-index: 1;
+	padding: 20px;
+	overflow: hidden;
+	border-radius: 32px;
+	background-color: #F1F3F5;
+	@media #{$md,$sm,$xs,$xxs} {
+		flex-wrap: wrap;
+		justify-content: center !important;
+	}
+	.ax-team-bg {
+		left: 0;
+		bottom: 0;
+		z-index: -1;
+		background-color: #F1F3F5;
+		img {
+			opacity: .8;
+			mix-blend-mode: luminosity;
+		}
+	}
+}
+
+.ax-team-text-wrap {
+	width: 100%;
+	padding: 40px;
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 805px;
+	flex-direction: column;
+	justify-content: space-between;
+	@media #{$xl,$lg,$md,$sm,$xs,$xxs} {
+		padding-left: 0;
+		padding-right: 20px;
+	}
+	.ax-sec-title {
+		max-width: 600px;
+		.sec_title {
+			font-size: 52px;
+			font-weight: 700;
+			@media #{$lg} {
+				font-size: 45px;
+			}
+			@media #{$md} {
+				font-size: 42px;
+			}
+			@media #{$sm} {
+				font-size: 40px;
+			}
+			@media #{$xs} {
+				font-size: 38px;
+			}
+			@media #{$xxs} {
+				font-size: 34px;
+			}
+			@media #{$xxxs} {
+				font-size: 30px;
+			}
+		}
+	}
+}
+
+.ax-btn-desc {
+	@media #{$xl,$lg,$md,$sm,$xs,$xxs} {
+		gap: 15px;
+	}
+	@media #{$lg,$md,$sm,$xs,$xxs} {
+		flex-wrap: wrap;
+		flex-direction: column-reverse;
+	}
+	p {
+		font-size: 20px;
+		max-width: 423px;
+		span {
+			width: 100px;
+		}
+		b {
+			color: #0D1B2A;
+			font-weight: 400;
+		}
+	}
+}
+
+.ax-team-member-wrap {
+	gap: 8px;
+	width: 100%;
+	display: grid;
+	max-width: 552px;
+	grid-template-columns: 1fr 1fr;
+	@media #{$xxs} {
+		grid-template-columns: 1fr;
+	}
+}
+
+.ax-team1-item {
+	z-index: 1;
+	overflow: hidden;
+	border-radius: 16px;
+	.item-link {
+		top: 50px;
+		opacity: 0;
+		right: 12px;
+		visibility: hidden;
+		transition: all 300ms ease-in-out;
+		a {
+			width: 48px;
+			height: 48px;
+			display: flex;
+			align-items: center;
+			border-radius: 10px;
+			justify-content: center;
+			background: #FFFFFF47;
+			i {
+				color: #fff;
+				font-size: 20px;
+				transform: rotate(-45deg);
+			}
+			&:hover {
+				background-color: var(--ax-prime-c);
+			}
+		}
+	}
+	@media #{$xxs} {
+		margin: 0 auto;
+		max-width: 272px;
+	}
+	&:before {
+		top: 0;
+		left: 0;
+		width: 100%;
+		opacity: 0;
+		content: '';
+		height: 100%;
+		overflow: hidden;
+		position: absolute;
+		visibility: hidden;
+		border-radius: 16px;
+		background: #0D1B2A3D;
+		backdrop-filter: blur(5px);
+		transition: all 500ms ease-in-out;
+	}
+	&:after {
+		left: 0;
+		bottom: 0;
+		height: 50%;
+		z-index: 0;
+		width: 100%;
+		content: '';
+		position: absolute;
+		background: linear-gradient(180deg, rgba(13, 27, 42, 0) 0%, #0D1B2A 100%);
+	}
+	.item-img {
+		width: 272px;
+		height: 356px;
+	}
+	.item-text-social {
+		gap: 15px;
+		left: 24px;
+		right: 24px;
+		bottom: 24px;
+		display: flex;
+		align-items: end;
+		position: absolute;
+		justify-content: space-between;
+	}
+	.item-name {
+		z-index: 2;
+		h3 {
+			color: #fff;
+			font-size: 18px;
+			font-weight: 600;
+		}
+		span {
+			color: #fff;
+			opacity: .72;
+		}
+	}
+	.item-social {
+		z-index: 2;
+		a {
+			opacity: 0;
+			width: 32px;
+			height: 32px;
+			display: flex;
+			margin-top: 2px;
+			border-radius: 4px;
+			align-items: center;
+			visibility: hidden;
+			justify-content: center;
+			background-color: #fff;
+			transform: translateY(-10px);
+			span {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				border-radius: 4px;
+				align-items: center;
+				background-color: #fff;
+				justify-content: center;
+			}
+		}
+	}
+	&:hover {
+		.item-link {
+			top: 12px;
+			opacity: 1;
+			visibility: visible;
+		}
+		&:before {
+			opacity: 1;
+			visibility: visible;
+		}
+		.item-social {
+			a {
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0px);
+				&:nth-child(1) {
+					transition-delay: 100ms;
+				}
+				&:nth-child(2) {
+					transition-delay: 150ms;
+				}
+				&:nth-child(3) {
+					transition-delay: 200ms;
+				}
+				&:nth-child(4) {
+					transition-delay: 250ms;
+				}
+				&:hover {
+					span {
+						color: #fff;
+						background-color: var(--ax-prime-c);
+					}
+				}
+			}
+		}
+	}
+}

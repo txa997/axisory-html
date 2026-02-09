@@ -1,0 +1,120 @@
+.ax-workp-sec {
+	z-index: 1;
+	.ax-workp-bg {
+		top: 0;
+		left: 0;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+	}
+	.ax-sec-title {
+		margin: 0 auto;
+		max-width: 850px;
+		.subtitle {
+			color: #fff;
+			background: linear-gradient(90deg, #011767 0%, rgba(255, 255, 255, 0) 50%, #011767 100%);
+		}
+		.sec_title {
+			color: #fff;
+		}
+	}
+}
+
+.ax-workp-content {
+	gap: 30px 40px;
+	display: grid;
+	padding-top: 225px;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	@media #{$xs,$xxs} {
+		padding-top: 120px;
+	}
+	@media #{$lg} {
+		gap: 30px 20px;
+	}
+	@media #{$md,$sm} {
+		grid-template-columns: 1fr 1fr;
+	}
+	@media #{$xs,$xxs} {
+		grid-template-columns: 1fr;
+	}
+}
+@keyframes hithere {
+	30% {
+		-webkit-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+	40%, 60% {
+		-webkit-transform: rotate(-10deg) scale(1.1);
+		transform: rotate(-10deg) scale(1.1);
+	}
+	50% {
+		-webkit-transform: rotate(10deg) scale(1.1);
+		transform: rotate(10deg) scale(1.1);
+	}
+	70% {
+		-webkit-transform: rotate(0deg) scale(1.1);
+		transform: rotate(0deg) scale(1.1);
+	}
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
+.ax-workp-item {
+	.item-icon {
+		width: 56px;
+		height: 56px;
+		margin-bottom: 25px;
+		border-radius: 100%;
+		background-color: #fff;
+		box-shadow: 0px 0px 5px 0px #000000 inset;
+	}
+	.item-text {
+		h3 {
+			color: #fff;
+			font-size: 22px;
+			font-weight: 600;
+			@media #{$lg} {
+				font-size: 18px;
+			}
+		}
+		span {
+			font-size: 18px;
+			font-weight: 600;
+			color: var(--ax-prime-c); 
+		}
+		p {
+			opacity: .8;
+			color: #fff;
+		}
+		.title-serial {
+			gap: 15px;
+			margin-bottom: 15px;
+			position: relative;
+			padding-bottom: 15px;
+			border-bottom: 1px solid rgba(255, 255, 255, .52);
+			&:before {
+				left: 0;
+				right: 0;
+				width: 0%;
+				height: 1px;
+				bottom: -1px;
+				content: '';
+				margin: 0 auto;
+				position: absolute;
+				transition: all 400ms ease-in-out;
+				background-color: var(--ax-color2);
+			}
+		}
+	}
+	&:hover {
+		.item-icon {
+			animation: hithere 1s ease infinite;
+		}
+		.title-serial {
+			&:before {
+				width: 100%;
+			}
+		}
+	}
+}
