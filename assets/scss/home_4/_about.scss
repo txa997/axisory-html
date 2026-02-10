@@ -42,6 +42,16 @@
                     }
                 }
             }
+
+
+            &:is(.has-stroke) {
+                -webkit-text-stroke: 1px #fff;
+                -webkit-text-fill-color: transparent;
+                position: absolute;
+                top: 0;
+                left: 0;
+                clip-path: polygon(70% 0, 100% 0, 100% 100%, 70% 100%);
+            }
         }
     }
 }
