@@ -176,6 +176,12 @@
         padding: 31px 60px;
         font-size: 16px;
         letter-spacing: 0.02em;
+        transition: var(--as-cube-1);
+
+        &:hover {
+            color: #000;
+            background-color: var(--as-clr-sd-1);
+        }
     }
     
 }

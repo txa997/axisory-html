@@ -1,0 +1,116 @@
+/* 
+    wow-plus-start
+*/
+@keyframes wa-rotated {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wa-rotated-minus {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+
+@keyframes fadeInUp2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    transform: translateY(30px);
+    filter: blur(3px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+.fadeInUp2 {
+  -webkit-animation-name: fadeInUp2;
+  animation-name: fadeInUp2;
+  animation-duration: .4s;
+  animation-timing-function: var(--as-cube-1);
+}
+
+@keyframes fadeInDown2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    transform: translateY(-30px);
+    filter: blur(3px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+.fadeInDown2 {
+  -webkit-animation-name: fadeInDown2;
+  animation-name: fadeInDown2;
+  animation-duration: .4s;
+  animation-timing-function: var(--as-cube-1);
+}
+
+
+@keyframes fadeInRight2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+    -ms-transform: translateX(50px);
+    transform: translateX(50px);
+    filter: blur(3px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    filter: blur(0px);
+  }
+}
+
+.fadeInRight2 {
+  -webkit-animation-name: fadeInRight2;
+  animation-name: fadeInRight2;
+  animation-duration: .4s;
+  animation-timing-function: var(--as-cube-1);
+}
+
+@keyframes fadeInLeft2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+    -ms-transform: translateX(50px);
+    transform: translateX(50px);
+    filter: blur(3px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    filter: blur(0px);
+  }
+}
+
+.fadeInLeft2 {
+  -webkit-animation-name: fadeInLeft2;
+  animation-name: fadeInLeft2;
+  animation-duration: .4s;
+  animation-timing-function: var(--as-cube-1);
+}
+
+/* 
+    wow-plus-end
+*/

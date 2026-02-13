@@ -9,8 +9,20 @@
         border-top: 1px dashed rgb(5 5 25 / 20%);
         border-bottom: 1px dashed rgb(5 5 25 / 20%);
 
+        @media #{$lg,$md,$xs} {
+            grid-template-columns: 1fr;
+        }
+
         &-right {
             padding: 0 40px;
+
+            @media #{$xs} {
+                padding: 0 10px;
+            }
+
+            @media #{$sm} {
+                padding: 0 40px;
+            }
         }
     }
 
@@ -103,6 +115,10 @@
                     a {
                         transition: var(--as-cube-1);
                     }
+
+                    @media #{$xl,$lg,$md,$xs} {
+                        font-size: 22px;
+                    }
                 }
 
 
@@ -115,6 +131,14 @@
                     overflow: hidden;
                     height: 0px;
                     transition: var(--as-cube-1);
+
+                    @media #{$xs} {
+                        flex-wrap: wrap;
+                    }
+
+                    @media #{$sm} {
+                        flex-wrap: nowrap;
+                    }
                 }
 
                 .icon {
@@ -122,6 +146,10 @@
                     line-height: .65;
                     margin-left: 80px;
                     color: var(--as-clr-sd-1);
+
+                    @media #{$xs} {
+                        margin-left: 0px;
+                    }
                 }
                 
                 .disc {
@@ -129,6 +157,7 @@
                     font-size: 16px;
                     max-width: 350px;
                     color: #fff;
+
                 }
             }
 
@@ -173,6 +202,14 @@
                         .bottom-content {
                             padding-top: 12px;
                             height: 114px;
+
+                            @media #{$xs} {
+                                height: 298px;
+                            }
+
+                            @media #{$sm} {
+                                height: 156px;
+                            }
                         }
                     }
                 }
@@ -233,6 +270,10 @@
             transform: translateX(-50%);
             width: 100%;
             z-index: -1;
+
+            @media #{$xl,$lg,$md,$xs} {
+                max-width: 260px;
+            }
 
             &-img {
                 height: 386px;
