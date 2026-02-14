@@ -1,0 +1,138 @@
+/* 
+    industry-1-start
+*/
+.as-industry-1 {
+    &-area {
+        background-color: #010128;
+    }
+
+
+    &-bg-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -3;
+        width: 86%;
+        height: 96%;
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: 418.45px;
+            background: linear-gradient(180deg, rgba(2, 2, 48, 0) 0%, var(--as-clr-h-1) 100%);
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 156.92px;
+            height: 100%;
+            background: linear-gradient(270deg, #010128 0%, rgba(2, 2, 48, 0) 100%);
+            right: 0;
+            top: 0;
+        }
+        
+    }
+    
+    
+
+    &-video {
+        text-align: right;
+        margin-right: -160px;
+
+        @media #{$xxxl,$xxl,$xl,$lg,$md,$xs} {
+            margin-right: 0px;
+        }
+
+        &-elm {
+            max-width: 348px;
+            height: 304px;
+            display: inline-block;
+            mix-blend-mode: luminosity;
+        }
+    }
+
+    
+    &-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1.48fr;
+        gap: 50px;
+        align-items: center;
+
+        @media #{$lg,$md,$xs} {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    &-sec-title {
+        
+        .as-sec-title-1 {
+            color: #fff;
+        }
+        .as-subtitle-1 {
+            color: #fff;
+            border-color: rgb(255 255 255 / 20%);
+        }
+        .sec-disc {
+            color: #fff;
+            opacity: 80%;
+            margin-top: 22px;
+        }
+    }
+
+
+
+    &-mask {
+        mask-size: 100% 100%;
+        mask-repeat: no-repeat;
+        overflow: hidden;
+        margin-right: -240px;
+
+        @media #{$xxxl,$xxl,$xl,$lg,$md,$xs} {
+            margin-right: 0px;
+        }
+    }
+
+    &-features {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-right: 16px;
+
+        .link-elm {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #D5D0FF;
+            border-radius: 100px;
+            padding: 8px;
+            padding-right: 24px;
+            font-size: 16px;
+            color: var(--as-clr-h-1);
+            flex: 0 0 auto;
+
+            .icon {
+                width: 44px;
+                height: 44px;
+                background-color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 28px;
+                border-radius: 50%;
+                color: #000;
+            }
+
+        }
+        
+    }
+
+    
+}
+
+/* 
+    industry-1-end
+*/

@@ -189,6 +189,55 @@ let asAbout1img = gsap.timeline({
 
 
 
+
+if ($('.as_t1_slider').length) {
+	var as_t1_slider = new Swiper(".as_t1_slider", {
+		loop: true,
+		speed: 400,
+		spaceBetween: 0,
+		slidesPerView: 4,
+
+		autoplay: {
+			delay: 5000,
+		},
+
+		navigation: {
+			nextEl: ".as_t1_slider_next",
+			prevEl: ".as_t1_slider_prev",
+		},
+
+
+		breakpoints: {
+			0: {
+				slidesPerView: 1,
+			},
+			576: {
+				slidesPerView: 1,
+			},
+			768: {
+				slidesPerView: 2,
+			},
+			992: {
+				slidesPerView: 3,
+			},
+			1200: {
+				slidesPerView: 3,
+			},
+			1400: {
+				slidesPerView: 4,
+			},
+			1600: {
+				slidesPerView: 4,
+			},
+
+		},
+
+	});
+
+}
+
+
+
 /* 
     marquee-left-nopause
 */
@@ -199,6 +248,16 @@ $('.wa_marquee_left_nopause').marquee({
 	delayBeforeStart: 0,
 	startVisible:true,
 	direction: 'left',
+	duplicated: true,
+	pauseOnHover: false,
+})
+
+$('.wa_marquee_right_nopause').marquee({
+	speed: 20,
+	gap: 0,
+	delayBeforeStart: 0,
+	startVisible:true,
+	direction: 'right',
 	duplicated: true,
 	pauseOnHover: false,
 })
