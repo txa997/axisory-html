@@ -1,0 +1,121 @@
+/* 
+    choose-1-start
+*/
+.as-choose-1 {
+    &-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1.17fr;
+        gap: 75px;
+
+        @media #{$lg,$md,$xs} {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &-content {
+        .as-sec-title-1 {
+            margin-bottom: 20px;
+        }
+
+        .disc {
+            margin-bottom: 30px;
+            max-width: 580px;
+        }
+    }
+
+    &-features {
+        margin-left: -32px;
+
+        @media #{$xxl,$xl,$lg,$md,$xs} {
+            margin-left: 0px;
+        }
+
+        &-single {
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            padding: 28px 32px;
+            gap: 24px;
+
+            .icon-elm {
+                width: 60px;
+                height: 60px;
+                background-color: #F4F4FB;
+                display: flex;
+                flex: 0 0 auto;
+                align-items: center;
+                justify-content: center;
+                font-size: 30px;
+                border-radius: 50%;
+                color: var(--as-clr-pr-1);
+            }
+
+            .title {
+                font-size: 20px;
+                margin-bottom: 12px;
+            }
+            
+
+            
+            &:is(.has-bg-clr) {
+                background: #FFFFFF;
+                box-shadow: 4px 4px 48px rgba(5, 5, 25, 0.14);
+
+                .icon-elm {
+                    background: var(--as-clr-pr-1);
+                    box-shadow: 5px 8px 16px rgba(1, 54, 255, 0.24);
+                    color: #fff;
+                }
+            }
+        }
+    }
+    
+
+
+    &-right {
+        margin-right: -48px;
+        display: grid;
+        gap: 12px;
+        grid-template-columns: 1.54fr 1fr;
+        align-items: end;
+
+        @media #{$xxl,$xl,$lg,$md} {
+            margin-right: 0px;
+        }
+
+        @media #{$xs} {
+            margin-right: 0px;
+            grid-template-columns: 1fr;
+        }
+
+        @media #{$sm} {
+            margin-right: 0px;
+            grid-template-columns: 1.54fr 1fr;
+        
+        }
+
+        .inner-div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 90px;
+        }
+    }
+    
+    &-img-1 {
+        border-radius: 16px;
+        height: 730px;
+
+        @media #{$xl,$lg,$md,$xs} {
+            height: 530px;
+        }
+    }
+    
+    
+    &-img-2 {
+        height: 400px;
+        border-radius: 16px;
+    }
+}
+
+

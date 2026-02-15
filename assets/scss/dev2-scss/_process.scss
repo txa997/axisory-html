@@ -1,0 +1,127 @@
+/* 
+    process-1-start
+*/
+.as-process-1 {
+    &-area {
+        background-color: #020241;
+    }
+
+    &-bg-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 90%;
+        height: 100%;
+        z-index: -1;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 261px;
+            height: 100%;
+            background: linear-gradient(270deg, #020241 0%, rgba(2, 2, 65, 0) 100%);
+            right: 0;
+            top: 0;
+        }
+    }
+
+
+
+
+    &-sec-title {
+        position: relative;
+        z-index: 1;
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: 254px;
+            width: 726px;
+            background: #020241;
+            filter: blur(117px);
+            border-radius: 260px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .as-subtitle-1 {
+            color: #fff;
+            border-color: rgb(255 255 255 / 20%);
+        }
+
+        .as-sec-title-1 {
+            color: #fff;
+        }
+    }
+
+    &-wrap {
+        max-width: 610px;
+        margin-left: auto;
+    }
+
+    &-card {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        &-single {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            padding: 40px 40px;
+            padding-top: 0;
+    
+            .icon-elm {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 60px;
+                height: 60px;
+                background-color: var(--as-clr-pr-1);
+                border-radius: 50%;
+                color: #fff;
+                font-size: 28px;
+                margin-bottom: 35px;
+            }
+            
+            .title {
+                font-size: 22px;
+                font-weight: 600;
+                margin-bottom: 18px;
+            }
+            
+            .bg-shape {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: calc(100% - 27px);
+                z-index: -2;
+            }
+
+            .big-title {
+                position: absolute;
+                left: 50%;
+                top: 55px;
+                transform: translateX(-50%);
+                font-size: 68px;
+                font-weight: 700;
+                color: #D5D0FF;
+                opacity: 52%;
+                z-index: -1;
+
+                @media #{$xs} {
+                    font-size: 38px; 
+                }
+            }
+
+            
+        }
+    }
+}
+
+/* 
+    process-1-end
+*/

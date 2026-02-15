@@ -238,6 +238,10 @@ if ($('.as_t1_slider').length) {
 
 
 
+
+
+
+
 /* 
     marquee-left-nopause
 */
@@ -330,3 +334,19 @@ if ($(".wa_btn_split_1").length) {
     });
 }
 
+
+
+
+
+/* 
+	faqs-active-class
+*/
+$(document).on('click', '.wa_accordion_item', function () {
+
+	if ($(this).hasClass('active')) {
+		$(this).removeClass('active');
+	} else {
+		$(this).addClass('active').siblings().removeClass('active');
+	}
+
+});
