@@ -59,15 +59,21 @@
             })).observe(this.DOM.element)
         }
         makeItRain() {
-            new IntersectionObserver((([t], e) => {
-                t.isIntersecting && (this.DOM.throwables.forEach((t => {
-                    gsap.to(t, {
-                        opacity: 1,
-                        duration: .35,
-                    })
-                })), this.startRain(), e.disconnect())
-            })).observe(this.DOM.element)
+            const observer = new IntersectionObserver((([entry], obs) => {
+                if (entry.isIntersecting) {
+                    this.DOM.throwables.forEach((t => {
+                        gsap.to(t, { opacity: 1, duration: .35 });
+                    }));
+                    this.startRain();
+                    obs.disconnect();
+                }
+            }), {
+                threshold: .01
+            });
+        
+            observer.observe(this.DOM.element);
         }
+        
         bindResize() {
             window.addEventListener("resize", this.onWindowResize)
         }
@@ -113,7 +119,7 @@
                         restitution: .3
                     });
                 this.bodies.push(u), Matter.Composite.add(this.engine.world, [u]), Matter.Events.on(this.runner, "tick", (() => {
-                    this.runner.enabled && (i.style.transform = "translate(-50%, -50%) rotate(" + u.angle.toFixed(2) + "rad)", o(u.position.y.toFixed(1)), n(u.position.x.toFixed(1)))
+                    this.runner.enabled && (i.style.transform = "", o(u.position.y.toFixed(1)), n(u.position.x.toFixed(1)))
                 }))
             }))
         }

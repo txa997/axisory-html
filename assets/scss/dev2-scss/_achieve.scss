@@ -443,6 +443,15 @@
         min-height: 396px;
         position: relative;
         z-index: 1;
+        overflow: hidden;
+
+        @media #{$xs} {
+            min-height: 506px;
+        }
+
+        @media #{$sm} {
+            min-height: 396px;
+        }
 
         .content-wrap {
             display: flex;
@@ -469,13 +478,15 @@
 
         &-member {
             width: 100%;
-            height: 100%;
+            height: 150%;
             position: absolute;
             top: 0;
             left: 0;
             overflow: hidden;
             display: flex;
             flex-wrap: wrap;
+            transform: translateY(-33.5%);
+            overflow: hidden;
     
             
             &-single {
@@ -484,10 +495,8 @@
                 display: flex;
                 padding: 4px;
                 padding-right: 20px;
-                font-weight: 500;
                 gap: 8px;
-                color: var(--as-clr-h-1);
-                background-color: #55D7EA;
+                background-color: var(--as-clr-sd-1);
                 align-items: center;
                 border-radius: 200px;
                 flex: 0 0 auto;
@@ -501,6 +510,33 @@
                 }
                 .name {
                     flex: 0 0 auto;
+                    color: var(--as-clr-h-1);
+                    font-weight: 500;
+                }
+
+                &:nth-child(2) {
+                    background-color: #FDCD8C;
+                }
+
+                &:nth-child(3) {
+                    background-color: #55D7EA;
+                }
+
+                &:nth-child(4) {
+                    background-color: #BBC0D3;
+                }
+
+                &:nth-child(5) {
+                    background-color: #ECFF97;
+                }
+                &:nth-child(6) {
+                    background-color: #FFA2DD;
+                }
+                &:nth-child(7) {
+                    background-color: #FFC0B5;
+                }
+                &:nth-child(8) {
+                    background-color: #fff;
                 }
             }
 
@@ -582,3 +618,34 @@
 /* 
     achieve-1-end
 */
+
+
+
+.testimonial-container {
+    position: relative;
+    width: 400px;
+    margin: auto;
+    overflow: hidden;
+  
+    .testimonial-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transform: translateY(-20px); // শুরুতে 20px উপরে থাকবে
+      transition: transform 0.6s ease;
+    }
+  }
+  
+  .controls {
+    text-align: center;
+    margin-top: 20px;
+  
+    button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      cursor: pointer;
+    }
+  }
+  

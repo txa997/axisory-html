@@ -350,3 +350,31 @@ $(document).on('click', '.wa_accordion_item', function () {
 	}
 
 });
+
+
+
+
+
+
+
+const cards = document.querySelectorAll('.testimonial-card');
+const upBtn = document.getElementById('upBtn');
+const downBtn = document.getElementById('downBtn');
+
+let currentIndex = 0;
+
+// Up button click
+upBtn.addEventListener('click', () => {
+  if (currentIndex < cards.length) {
+    cards[currentIndex].style.transform = 'translateY(-100%)';
+    currentIndex++;
+  }
+});
+
+// Down button click
+downBtn.addEventListener('click', () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    cards[currentIndex].style.transform = 'translateY(0%)';
+  }
+});
