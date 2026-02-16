@@ -1,0 +1,167 @@
+/* 
+    footer-1-start
+*/
+.as-footer-1 {
+    &-area {
+        background-color: var(--as-clr-h-1);
+    }
+
+    &-favicon {
+        text-align: center;
+        position: absolute;
+        top: -60px;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+    }
+
+    &-blur {
+        background: rgba(5, 5, 25, 0.12);
+        backdrop-filter: blur(42px);
+    }
+
+
+    &-social {
+        border-top: 1px solid rgb(255 255 255 / 24%);
+        border-bottom: 1px solid rgb(255 255 255 / 24%);
+
+        &-link {
+            border-left: 1px solid rgb(255 255 255 / 24%);
+            border-right: 1px solid rgb(255 255 255 / 24%);
+            display: flex;
+
+            .single-link {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                color: rgb(255 255 255 / 72%);
+                gap: 8px;
+                padding: 28px 10px;
+                transition: var(--as-cube-1);
+
+                i {
+                    color: #fff;
+                    transition: var(--as-cube-1);
+                }
+                
+                &:hover {
+                    background-color: var(--as-clr-pr-1);
+                    color: #fff;
+                }
+
+                &:not(:last-child) {
+                    border-right: 1px solid rgb(255 255 255 / 24%);
+                }
+            }
+        }
+    }
+
+    &-wrap {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px 120px;
+        flex-wrap: wrap;
+    }
+
+    &-widget {
+        &-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #fff;
+            font-weight: 500;
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 1;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+            }
+
+        }
+        &-single {
+
+
+            .pf-free-phone-1 {
+                line-height: 22px;
+                color: rgb(255 255 255 / 64%);
+
+                .icon {
+                    border: 1.5px solid #2ac8d31a;
+                    transition: all .4s var(--pf-cube-2);
+                }
+                .number {
+                    color: rgb(255 255 255 / 80%);
+                    transition: all .4s var(--pf-cube-2);
+                }
+
+                &:hover {
+                    .icon {
+                        transform: rotate(45deg);
+                    }
+                    .number {
+                        color: var(--pf-clr-pr-1);
+                        b {
+                            color: var(--pf-clr-pr-1);
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    &-menu {
+        li {
+            &:not(:last-child) {
+                margin-bottom: 13px;
+            }
+        
+            a {
+                font-family: var(--pr-font-h-1);
+                text-transform: capitalize;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 1.2;
+                opacity: 80%;
+                transition: all .4s var(--pf-cube-2);
+                position: relative;
+                z-index: 1;
+                
+
+                &::after {
+                    content: "";
+                    width: 0px;
+                    height: 1.5px;
+                    position: absolute;
+                    top: 9px;
+                    left: -12px;
+                    background: var(--pf-clr-pr-1);
+                    transition: all .4s var(--pf-cube-2);
+                }
+
+                &:hover {
+                    transform: translateX(12px);
+                    color: var(--pf-clr-pr-1);
+                    &::after {
+                        width: 8px;
+                    }
+                }
+
+            }
+        }
+    }
+
+    
+}
+/* 
+    footer-1-end
+*/

@@ -2,6 +2,18 @@
     projects-1-start
 */
 .as-projects-1 {
+    &-area {
+        &::after {
+            content: "";
+            width: 55.3%;
+            height: 224px;
+            background-color: #F4F4FB;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
+    }
     &-slider {
         &-preview {
             position: absolute;
@@ -9,6 +21,10 @@
             left: 0;
             width: 140px;
             height: 800px;
+
+            @media #{$xxxl,$xxl,$xl,$lg,$md,$xs} {
+                display: none;
+            }
 
             &-img {
                 height: 100%;
@@ -25,6 +41,16 @@
         gap: 85px;
         grid-template-columns: 1fr 1.2fr;
         margin-right: -258px;
+
+        @media #{$xxxl,$xxl} {
+            grid-template-columns: 1fr 1.4fr;
+            margin-right: 0;
+        }
+
+        @media #{$xl,$lg,$md,$xs} {
+            grid-template-columns: 1fr ;
+            margin-right: 0;
+        }
     }
 
     &-left {
@@ -33,6 +59,10 @@
 
     &-sec-title {
         margin-bottom: 165px;
+
+        @media #{$xxxl,$xxl,$xl,$lg,$md,$xs} {
+            margin-bottom: 55px;
+        }
 
         .as-sec-title-1  {
             font-size: 60px;
@@ -70,6 +100,10 @@
         gap: 28px;
         align-items: center;
 
+        @media #{$xxxl,$xxl,$xl,$lg,$md,$xs} {
+            grid-template-columns: 1fr;
+        }
+
         .img-elm {
             border-radius: 8px;
             height: 224px;
@@ -89,6 +123,10 @@
                 position: relative;
                 z-index: 1;
 
+                @media #{$xs} {
+                    height: 610px;
+                }
+
                 .bg-img {
                     width: 100%;
                     height: calc(100% - 80px);
@@ -98,9 +136,77 @@
                     position: absolute;
                     bottom: 0;
                     right: 112px;
+                    transform: translateX(50%);
+                    transition: 1.2s;
+
+                    @media #{$xxl,$xl,$lg,$md} {
+                        right: 50px;
+                    }
+
+                    @media #{$xs} {
+                        right: 10px;
+                    }
+
+                    @media #{$sm} {
+                        right: 50px;
+                    }
+                }
+            }
+
+
+            .swiper-wrapper {
+                .swiper-slide {
+                    overflow: hidden;
+                    &:is(.swiper-slide-active) {
+                        .as-projects-1-slider-main-elm .card-posi {
+                            transform: translateX(0);
+                            transition-delay: .3s;
+                        }
+                    }
                 }
             }
         }
+
+
+        &-btn {
+            position: absolute;
+            bottom: 144px;
+            left: 40px;
+            z-index: 1;
+            display: flex;
+            gap: 8px;
+
+            @media #{$xs} {
+                position: unset;
+                margin-top: 30px;
+            }
+
+            .single-btn {
+                width: 56px;
+                height: 56px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(255, 255, 255, 0.3);
+                backdrop-filter: blur(1px);
+                border-radius: 28px;
+                font-size: 18px;
+                color: #fff;
+                transition: var(--as-cube-1);
+                cursor: pointer;
+
+                @media #{$xs} {
+                    background: rgba(51, 51, 51, 0.3);
+                }
+
+                &:hover {
+                    background-color: var(--as-clr-pr-1);
+                }
+
+                
+            }
+        }
+        
     }
 
 
@@ -119,6 +225,7 @@
         .img-x-meta {
             background-color: #fff;
             border-radius: 0 0 10px 10px;
+            margin-bottom: 22px;
         }
 
         .card-meta {
@@ -152,6 +259,53 @@
                         background: radial-gradient(50% 50% at 50% 50%, #050519 0%, #FFFFFF 100%);
                         opacity: 0.8;
                     }
+                }
+            }
+        }
+        
+
+        .title {
+            font-size: 26px;
+            margin-bottom: 15px;
+
+            @media #{$xs} {
+                font-size: 22px;
+            }
+
+            a {
+                transition: var(--as-cube-1);
+
+                &:hover {
+                    color: var(--as-clr-pr-1);
+                }
+            }
+        }
+        
+        .title-x-content {
+            padding: 0 20px;
+            margin-bottom: 65px;
+        }
+        
+        .disc span {
+            color: var(--as-clr-pr-1);
+        }
+
+        .as-pr-btn-1 {
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            padding: 12px 10px;
+            color: #fff;
+
+            &::after {
+                width: 100%;
+                border-radius: 8px;
+                background-color: var(--as-clr-h-1);
+            }
+
+            &:hover {
+                &::after {
+                    background-color: var(--as-clr-pr-1);
                 }
             }
         }

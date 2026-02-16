@@ -1,5 +1,6 @@
 window.addEventListener('load', function(){ 
 
+    // title-animation
     function wa_split_text() {
 
         var wa_st = $(".wa-split-text");
@@ -125,7 +126,37 @@ window.addEventListener('load', function(){
     }
     wa_split_text();
 
+    // button-animation
+    if ($(".wa_btn_split_1").length) {
+        var wa_btn_split_1 = $(".wa_btn_split_1");
+        gsap.registerPlugin(SplitText);
 
+        wa_btn_split_1.each(function (index, el) {
+            el.split = new SplitText(el, {
+                type: "words,chars",
+            });
+
+            $(el).on("mouseenter", function () {
+                el.split.chars.forEach((char, i) => {
+
+                    gsap.fromTo(
+                        char,
+                        { x: 10, opacity: 0, },
+                        {
+                            x: 0,
+                            opacity: 1,
+                            duration: 0.4,
+                            ease: "power2.out",
+                            delay: i * 0.03
+                        }
+                    );
+                });
+            });
+        });
+    }
+
+
+    // hero-1-animation
     const asHero4 = gsap.timeline(); 
     asHero4.from(".as-hero-1-img img", {
         transformOrigin: "100% 50%",
@@ -156,7 +187,7 @@ window.addEventListener('load', function(){
 })
 
 
-
+// about-1-img-animation
 let asAbout1img = gsap.timeline({
     scrollTrigger: {
       trigger: ".as-about-1-fold-scene",
@@ -189,7 +220,7 @@ let asAbout1img = gsap.timeline({
 
 
 
-
+// team-1-slider
 if ($('.as_t1_slider').length) {
 	var as_t1_slider = new Swiper(".as_t1_slider", {
 		loop: true,
@@ -237,7 +268,78 @@ if ($('.as_t1_slider').length) {
 }
 
 
+// services-1-tabs-btn
+document.querySelectorAll('.as-services-1-tabs-btn .nav-link')
+.forEach(tab => {
 
+    tab.addEventListener('mouseenter', function () {
+        const bsTab = new bootstrap.Tab(this);
+        bsTab.show();
+    });
+
+});
+
+
+
+// projects-1-slider
+if ($('.as_p1_slider_preview').length) {
+
+	let as_p1_slider_preview = new Swiper('.as_p1_slider_preview', {
+		speed: 600,
+	});
+  
+	let as_p1_slider_main = new Swiper('.as_p1_slider_main', {
+		speed: 600,
+
+        navigation: {
+			nextEl: ".as_p1_slider_main_next",
+			prevEl: ".as_p1_slider_main_prev",
+		},
+
+		thumbs: {
+			swiper: as_p1_slider_preview,
+		},
+	});
+  
+}
+ 
+
+
+
+
+
+function initStackCards() {
+
+    const container = document.querySelector('.as-testimonial-1-card-all');
+    const cards = container.querySelectorAll('.as-testimonial-1-card-single');
+
+    const offset = 44; // gap between cards
+    const baseHeight = cards[0].offsetHeight;
+    let maxHeight = 0;
+
+
+    cards.forEach((card, index) => {
+        card.style.bottom = `${index * offset}px`;
+
+        // optional: different background shade
+        // const darkness = 15 + (index * 8);
+        // card.style.backgroundColor = `rgb(${darkness}, ${darkness}, ${darkness + 10})`;
+
+        const cardHeight = card.offsetHeight;
+        if (cardHeight > maxHeight) {
+            maxHeight = cardHeight;
+        }
+
+        card.style.zIndex =  index;
+    });
+
+    const totalHeight = baseHeight + (cards.length - 1) * offset;
+
+    container.style.height = totalHeight + 'px';
+}
+
+window.addEventListener('load', initStackCards);
+window.addEventListener('resize', initStackCards);
 
 
 
@@ -267,14 +369,18 @@ $('.wa_marquee_right_nopause').marquee({
 })
 
 
+
+/* 
+    data-mask-image
+*/
 $('[data-mask-image]').each(function() {
     $(this).css('mask-image', 'url('+ $(this).attr('data-mask-image') + ')');
 });
 
 
-
-
-
+/* 
+    add-class-remove-class
+*/
 $(document).on('click', '.wa_toggle_active', function () {
 
 	if ($(this).hasClass('active')) {
@@ -284,59 +390,6 @@ $(document).on('click', '.wa_toggle_active', function () {
 	}
 
 });
-
-
-document.querySelectorAll('.as-services-1-tabs-btn .nav-link')
-.forEach(tab => {
-
-    tab.addEventListener('mouseenter', function () {
-        const bsTab = new bootstrap.Tab(this);
-        bsTab.show();
-    });
-
-});
-
-
-
-
-
-
-
-
-/* 
-    button-animation
-*/
-if ($(".wa_btn_split_1").length) {
-    var wa_btn_split_1 = $(".wa_btn_split_1");
-    gsap.registerPlugin(SplitText);
-
-    wa_btn_split_1.each(function (index, el) {
-        el.split = new SplitText(el, {
-            type: "words,chars",
-        });
-
-        $(el).on("mouseenter", function () {
-            el.split.chars.forEach((char, i) => {
-
-                gsap.fromTo(
-                    char,
-                    { x: 10, opacity: 0, },
-                    {
-                        x: 0,
-                        opacity: 1,
-                        duration: 0.4,
-                        ease: "power2.out",
-                        delay: i * 0.03
-                    }
-                );
-            });
-        });
-    });
-}
-
-
-
-
 
 /* 
 	faqs-active-class
@@ -355,26 +408,21 @@ $(document).on('click', '.wa_accordion_item', function () {
 
 
 
-
-
-const cards = document.querySelectorAll('.testimonial-card');
-const upBtn = document.getElementById('upBtn');
-const downBtn = document.getElementById('downBtn');
-
-let currentIndex = 0;
-
-// Up button click
-upBtn.addEventListener('click', () => {
-  if (currentIndex < cards.length) {
-    cards[currentIndex].style.transform = 'translateY(-100%)';
-    currentIndex++;
-  }
-});
-
-// Down button click
-downBtn.addEventListener('click', () => {
-  if (currentIndex > 0) {
-    currentIndex--;
-    cards[currentIndex].style.transform = 'translateY(0%)';
-  }
-});
+if ($(".as-testimonial-1-card-single").length) {
+    const cards = document.querySelectorAll('.as-testimonial-1-card-single');
+    const upBtn = document.querySelector('.up-button');
+    const downBtn = document.querySelector('.down-button');
+    let currentIndex = cards.length - 1;
+    upBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            cards[currentIndex].style.transform = 'translateY(-150%)';
+            currentIndex--;
+        }
+    });
+    downBtn.addEventListener('click', () => {
+        if (currentIndex < cards.length - 1) {
+            currentIndex++;
+            cards[currentIndex].style.transform = 'translateY(0%)';
+        }
+    });
+}
