@@ -68,6 +68,8 @@
         gap: 12px;
         perspective: 2000px;
         transform-style: preserve-3d;
+        position: relative;
+        z-index: 1;
 
         &-single {
             text-align: center;

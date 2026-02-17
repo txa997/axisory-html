@@ -273,6 +273,19 @@ asAh1shpe.from(".as-achieve-1-projects .img-elm-single", {
 
 
 
+// achieve-1-bg-shape
+let asAchiBgShape = gsap.timeline({
+	scrollTrigger: {
+		trigger: ".as-achieve-1-bg-img",
+		toggleActions: "play none none reverse",
+        scrub: true,
+		markers: false,
+	},
+});
+asAchiBgShape.from(".as-achieve-1-bg-img img", { 
+    yPercent: -40,
+});
+
 // footer-1-shape
 let asFooter1shape = gsap.timeline({
 	scrollTrigger: {
@@ -302,7 +315,7 @@ asFooter1Btn.from(".as-footer-1-lets-btn-ani", {
     scale: 0,
 });
 
-// footer-1-btn
+// faqs-big-title
 let asFaqs1 = gsap.timeline({
 	scrollTrigger: {
 		trigger: ".as-faqs-1-big-title",
@@ -316,6 +329,9 @@ let asFaqs1 = gsap.timeline({
 asFaqs1.from(".as-faqs-1-big-title", { 
     y: 200,
 });
+
+
+
 
 
 // team-1-slider
@@ -443,32 +459,6 @@ window.addEventListener('resize', initStackCards);
 
 
 /* 
-    marquee-left-nopause
-*/
-
-$('.wa_marquee_left_nopause').marquee({
-	speed: 20,
-	gap: 0,
-	delayBeforeStart: 0,
-	startVisible:true,
-	direction: 'left',
-	duplicated: true,
-	pauseOnHover: false,
-})
-
-$('.wa_marquee_right_nopause').marquee({
-	speed: 20,
-	gap: 0,
-	delayBeforeStart: 0,
-	startVisible:true,
-	direction: 'right',
-	duplicated: true,
-	pauseOnHover: false,
-})
-
-
-
-/* 
     data-mask-image
 */
 $('[data-mask-image]').each(function() {
@@ -524,7 +514,7 @@ if ($(".as-testimonial-1-card-single").length) {
 }
 
 
-// choose-1-class
+// price-1-class
 if($(".wa_hover_class_toggle").length) {
     const wa_hover_class = document.querySelectorAll(".wa_hover_class_toggle");
     const defaultActive = document.querySelector(".wa_hover_class_toggle.active");
@@ -561,3 +551,28 @@ if($(".as-choose-1-features-single").length) {
         });
     });
 };
+
+
+/* 
+    marquee-left-nopause
+*/
+
+$('.wa_marquee_left_nopause').marquee({
+	speed: 20,
+	gap: 0,
+	delayBeforeStart: 0,
+	startVisible:true,
+	direction: 'left',
+	duplicated: true,
+	pauseOnHover: false,
+})
+
+$('.wa_marquee_right_nopause').marquee({
+	speed: 20,
+	gap: 0,
+	delayBeforeStart: 0,
+	startVisible:true,
+	direction: 'right',
+	duplicated: true,
+	pauseOnHover: false,
+})

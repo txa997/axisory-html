@@ -151,6 +151,12 @@
             .hr-line {
                 opacity: 50%;
             }
+            .card-btn {
+                color: #fff;
+                &::after {
+                    background-color: var(--as-clr-h-1);
+                }
+            }
         }
     }
     

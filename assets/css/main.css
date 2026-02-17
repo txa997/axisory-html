@@ -1905,6 +1905,12 @@
 .as-price-1-card:is(.active) .hr-line {
   opacity: 50%;
 }
+.as-price-1-card:is(.active) .card-btn {
+  color: #fff;
+}
+.as-price-1-card:is(.active) .card-btn::after {
+  background-color: var(--as-clr-h-1);
+}
 .as-price-1-content {
   border-radius: 20px;
   padding: 4px;
@@ -2801,6 +2807,8 @@
   gap: 12px;
   perspective: 2000px;
   transform-style: preserve-3d;
+  position: relative;
+  z-index: 1;
 }
 .as-process-1-card-single {
   text-align: center;
