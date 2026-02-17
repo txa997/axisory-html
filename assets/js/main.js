@@ -183,6 +183,23 @@ window.addEventListener('load', function(){
         yPercent: 10, 
     });
 
+    /* 
+		add-active-class
+	*/
+	const waAddClass = gsap.utils.toArray('.wa_add_class');
+	waAddClass.forEach(waAddClassItem => {
+		gsap.to(waAddClassItem, {
+			scrollTrigger: {
+				trigger: waAddClassItem,
+				start: "top 90%",
+				end: "bottom bottom",
+				toggleActions: "play none none reverse",
+				toggleClass: "active",
+				once: true,
+				markers: false,
+			}
+		});
+	});
 
 })
 
@@ -218,6 +235,72 @@ let asAbout1img = gsap.timeline({
     duration: 1,
 },"<50%");
 
+
+// achieve-1-circle
+let asAh1circle = gsap.timeline({
+	scrollTrigger: {
+		trigger: ".as-achieve-1-award ",
+        start: "top 70%",
+		toggleActions: "play none none reverse",
+		markers: false,
+	},
+});
+
+asAh1circle.from(".as-achieve-1-award .bg-shape-2 img", { 
+    rotate: 90,
+    duration: 2,
+});
+
+// achieve-1-shape
+let asAh1shpe = gsap.timeline({
+	scrollTrigger: {
+		trigger: ".as-achieve-1-projects ",
+        start: "top 70%",
+		toggleActions: "play none none reverse",
+		markers: false,
+	},
+});
+
+asAh1shpe.from(".as-achieve-1-projects .img-elm-single-clr", { 
+    yPercent: 100,
+    duration: 1,
+});
+asAh1shpe.from(".as-achieve-1-projects .img-elm-single", { 
+    yPercent: 100,
+    duration: 1,
+},"<50%");
+
+
+
+
+// footer-1-shape
+let asFooter1shape = gsap.timeline({
+	scrollTrigger: {
+		trigger: ".as-footer-1-favicon",
+		toggleActions: "play none none reverse",
+        scrub: true,
+		markers: false,
+	},
+});
+
+asFooter1shape.from(".as-footer-1-favicon img", { 
+    yPercent: -100,
+});
+
+// footer-1-btn
+let asFooter1Btn = gsap.timeline({
+	scrollTrigger: {
+		trigger: ".as-footer-1-lets-btn-ani",
+		toggleActions: "play none none reverse",
+		markers: false,
+	},
+});
+
+asFooter1Btn.from(".as-footer-1-lets-btn-ani", { 
+    duration:2.5,
+    ease: "elastic.out(1,0.3)",
+    scale: 0,
+});
 
 
 // team-1-slider
@@ -403,9 +486,6 @@ $(document).on('click', '.wa_accordion_item', function () {
 	}
 
 });
-
-
-
 
 
 if ($(".as-testimonial-1-card-single").length) {

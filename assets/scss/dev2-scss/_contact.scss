@@ -102,6 +102,11 @@
 
         .link-elm {
             color: var(--as-clr-h-1);
+            transition: var(--as-cube-1);
+
+            &:hover {
+                color: var(--as-clr-pr-1);
+            }
         }
         
 

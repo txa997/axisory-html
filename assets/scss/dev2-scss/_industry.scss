@@ -23,6 +23,8 @@
             bottom: 0;
             left: 0;
             width: 100%;
+
+            z-index: 1;
         }
 
         &::before {
@@ -33,6 +35,7 @@
             background: linear-gradient(270deg, #010128 0%, rgba(2, 2, 48, 0) 100%);
             right: 0;
             top: 0;
+            z-index: 1;
         }
         
     }
@@ -113,6 +116,7 @@
             font-size: 16px;
             color: var(--as-clr-h-1);
             flex: 0 0 auto;
+            transition: var(--as-cube-1);
 
             .icon {
                 width: 44px;
@@ -126,6 +130,9 @@
                 color: #000;
             }
 
+            &:hover {
+                background-color: var(--as-clr-sd-1);
+            }
         }
         
     }
