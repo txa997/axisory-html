@@ -76,7 +76,7 @@
     &-disc {
         color: #fff;
         max-width: 556px;
-        opacity: 80;
+        opacity: 80%;
         margin-bottom: 35px;
     }
 
@@ -220,9 +220,32 @@
             width: 100%;
         }
     }
+
+    &-big-title {
+        font-size: 318px;
+        font-weight: 700;
+        color: #fff;
+        opacity: 10%;
+        line-height: 1;
+        position: absolute;
+        right: -150px;
+        top: 74px;
+        z-index: -2;
+        animation: h1bigTitleKf 10s linear infinite;
+    }
 }
 
-
+@keyframes h1bigTitleKf {
+    0% {
+        transform: translateX(30px);
+    }
+    50% {
+        transform: translateX(-20px);
+    }
+    100% {
+        transform: translateX(30px);
+    }
+}
 
 
 /* 

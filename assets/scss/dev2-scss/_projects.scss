@@ -216,6 +216,35 @@
         background-color: #F4F4FB;
         padding: 8px;
         padding-top: 22px;
+        position: relative;
+        z-index: 1;
+
+        .dot-shape {
+            position: absolute;
+            top: 9px;
+            left: 17px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #D7D7DF;
+            z-index: 1;
+
+            &:is(.has-clr) {
+                background-color: var(--as-clr-pr-1);
+            }
+
+            &:nth-child(2) {
+                left: 27px;
+            }
+
+            &:nth-child(3) {
+                left: 37px;
+            }
+
+            &:nth-child(4) {
+                left: 47px;
+            }
+        }
 
         .card-img {
             height: 156px;

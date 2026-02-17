@@ -143,7 +143,7 @@
             
         }
 
-        &:hover {
+        &:is(.active) {
             background-color: var(--as-clr-h-1);
             .title {
                 color: #fff;

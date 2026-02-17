@@ -36,6 +36,7 @@
             align-items: center;
             padding: 28px 32px;
             gap: 24px;
+            transition: var(--as-cube-1);
 
             .icon-elm {
                 width: 60px;
@@ -48,6 +49,7 @@
                 font-size: 30px;
                 border-radius: 50%;
                 color: var(--as-clr-pr-1);
+                transition: var(--as-cube-1);
             }
 
             .title {
@@ -57,7 +59,7 @@
             
 
             
-            &:is(.has-bg-clr) {
+            &:is(.active2) {
                 background: #FFFFFF;
                 box-shadow: 4px 4px 48px rgba(5, 5, 25, 0.14);
 
@@ -77,7 +79,7 @@
         display: grid;
         gap: 12px;
         grid-template-columns: 1.54fr 1fr;
-        align-items: end;
+        align-items: start;
 
         @media #{$xxl,$xl,$lg,$md} {
             margin-right: 0px;
@@ -99,6 +101,11 @@
             flex-direction: column;
             align-items: center;
             gap: 90px;
+            margin-top: 50px;
+
+            @media #{$lg,$md,$xs} {
+                margin-top: 0;
+            }
         }
     }
     

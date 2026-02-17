@@ -118,6 +118,35 @@
     
         }
     }
+
+    &:is(.has-border) {
+        color: var(--as-clr-h-1);
+
+        &::after {
+            background-color: transparent;
+            border: 2px solid var(--as-clr-h-1);
+        }
+
+        .icon {
+            outline-color: var(--as-clr-h-1);
+            color: var(--as-clr-h-1);
+            box-shadow: inset 0px 0px 5px #050519;
+        }
+
+        &:hover {
+            color: #fff;
+            &::after {
+                background-color: var(--as-clr-pr-1);
+                border-color: transparent;
+            }
+            .icon {
+                outline-color: var(--as-clr-pr-1);
+            }
+    
+        }
+    }
+
+    
 }
 
 

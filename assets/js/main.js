@@ -165,9 +165,9 @@ window.addEventListener('load', function(){
         delay: 1,
         duration: 1.5,
     });
-    asHero4.from(".as-hero-1-bg-img img", {
-        scale: 1.3,
-        duration: 1.5,
+    asHero4.to(".as-hero-1-bg-img img", {
+        scale: 1.2,
+        duration: 15,
     },"<");
 
     const asHeroScroll4 = gsap.timeline({
@@ -302,6 +302,21 @@ asFooter1Btn.from(".as-footer-1-lets-btn-ani", {
     scale: 0,
 });
 
+// footer-1-btn
+let asFaqs1 = gsap.timeline({
+	scrollTrigger: {
+		trigger: ".as-faqs-1-big-title",
+        end: "top 60%", 
+		toggleActions: "play none none reverse",
+        scrub: true,
+		markers: false,
+	},
+});
+
+asFaqs1.from(".as-faqs-1-big-title", { 
+    y: 200,
+});
+
 
 // team-1-slider
 if ($('.as_t1_slider').length) {
@@ -311,9 +326,9 @@ if ($('.as_t1_slider').length) {
 		spaceBetween: 0,
 		slidesPerView: 4,
 
-		autoplay: {
-			delay: 5000,
-		},
+		// autoplay: {
+		// 	delay: 5000,
+		// },
 
 		navigation: {
 			nextEl: ".as_t1_slider_next",
@@ -368,11 +383,11 @@ document.querySelectorAll('.as-services-1-tabs-btn .nav-link')
 if ($('.as_p1_slider_preview').length) {
 
 	let as_p1_slider_preview = new Swiper('.as_p1_slider_preview', {
-		speed: 600,
+		speed: 1000,
 	});
   
 	let as_p1_slider_main = new Swiper('.as_p1_slider_main', {
-		speed: 600,
+		speed: 1000,
 
         navigation: {
 			nextEl: ".as_p1_slider_main_next",
@@ -474,6 +489,7 @@ $(document).on('click', '.wa_toggle_active', function () {
 
 });
 
+
 /* 
 	faqs-active-class
 */
@@ -506,3 +522,42 @@ if ($(".as-testimonial-1-card-single").length) {
         }
     });
 }
+
+
+// choose-1-class
+if($(".wa_hover_class_toggle").length) {
+    const wa_hover_class = document.querySelectorAll(".wa_hover_class_toggle");
+    const defaultActive = document.querySelector(".wa_hover_class_toggle.active");
+    wa_hover_class.forEach(card => {
+        card.addEventListener("mouseenter", function () {
+            wa_hover_class.forEach(c => c.classList.remove("active"));
+            this.classList.add("active");
+        });
+        card.addEventListener("mouseleave", function () {
+            wa_hover_class.forEach(c => c.classList.remove("active"));
+            if (defaultActive) {
+                defaultActive.classList.add("active");
+            }
+
+        });
+    });
+};
+
+// choose-1-class
+if($(".as-choose-1-features-single").length) {
+    const ch1_hover_class = document.querySelectorAll(".as-choose-1-features-single");
+    const ch1_defaultActive = document.querySelector(".as-choose-1-features-single.active2");
+    ch1_hover_class.forEach(card2 => {
+        card2.addEventListener("mouseenter", function () {
+            ch1_hover_class.forEach(c => c.classList.remove("active2"));
+            this.classList.add("active2");
+        });
+        card2.addEventListener("mouseleave", function () {
+            ch1_hover_class.forEach(c => c.classList.remove("active2"));
+            if (ch1_defaultActive) {
+                ch1_defaultActive.classList.add("active2");
+            }
+
+        });
+    });
+};
