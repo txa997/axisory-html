@@ -42,6 +42,32 @@
     }
 }
 
+.as-subtitle-2 {
+    font-family: var(--as-font-1);
+    line-height: 1.5;
+    color: var(--as-clr-h-1);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    border-bottom: 1px solid #fff;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 32px;
+    padding-bottom: 10px;
+    
+    &::after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: var(--as-clr-h-1);
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        opacity: 16%;
+    }
+}
+
+
 .as-sec-title-1 {
     font-family: var(--as-font-1);
     color: var(--as-clr-h-1);

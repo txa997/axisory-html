@@ -251,3 +251,194 @@
 /* 
     hero-1-end
 */
+
+/* 
+    hero-2-start
+*/
+.as-hero-2 {
+    &-area {
+      
+        border-radius: 0 0 48px 48px;
+
+        background-color: #020241;
+
+
+    }
+
+    &-bg-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        opacity: 88%;
+    }
+
+    &-bg-shape {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+    }
+
+    &-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 50px;
+        flex-wrap: wrap;
+    }
+    
+    &-right {
+        max-width: 420px;
+    }
+
+    &-left {
+        max-width: 711px;
+
+        @media #{$xl} {
+            max-width: 631px;
+        }
+
+        @media #{$lg} {
+            max-width: 431px;
+        }
+    }
+
+    &-title {
+        font-size: 72px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.055;
+        margin-bottom: 44px;
+
+
+        
+        @media #{$xl} {
+            font-size: 62px;
+        }
+
+        @media #{$lg} {
+            font-size: 56px;
+        }
+    
+        @media #{$md} {
+            font-size: 50px;
+        }
+    
+        @media #{$xs} {
+            font-size: 38px;
+        }
+    
+        @media #{$sm} {
+            font-size: 44px;
+        }
+    }
+
+    &-disc {
+        color: #fff;
+        margin-bottom: 35px;
+    }
+
+    &-author {
+        display: flex;
+
+
+        .img-elm {
+            max-width: 124px;
+            border-radius: 16px;
+            width: 100%;
+            border: 6px solid #D9DDE5;
+        }
+
+        .content-wrap {
+            background: #DBE0E8;
+            border-radius: 16px;
+            padding: 20px 28px;
+            width: 100%;
+            overflow: hidden;
+
+            position: relative;
+            z-index: 1;
+        }
+
+        .name {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .bio {
+            font-size: 18px;
+            margin-bottom: 17px;
+
+            span {
+                display: block;
+                font-size: 14px;
+                opacity: 72%;
+                margin-top: 5px;
+            }
+        }
+
+        .btn-elm {
+            font-size: 14px;
+            background-color: var(--as-clr-h-1);
+            color: #fff;
+            border-radius: 4px;
+            padding: 6px 15px;
+            transition: var(--as-cube-1);
+
+            &:hover {
+                background-color: var(--as-clr-pr-1);
+            }
+        }
+
+        .favicon-elm {
+            position: absolute;
+            right: -13px;
+            bottom: -9px;
+            width: 37%;
+            z-index: -1;
+        }
+    }
+
+
+    &-slider {
+        &-item {
+            min-height: 920px;
+            padding-bottom: 80px;
+            display: flex;
+            align-items: end;
+            justify-content: end;
+
+            @media #{$xxl,$xl,$lg} {
+                min-height: 870px;
+            }
+    
+            @media #{$md,$xs} {
+                min-height: auto;
+                padding-top: 200px;
+            }
+        }
+
+
+        .swiper-notification {
+            display: none;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* 
+    hero-2-end
+*/

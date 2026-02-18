@@ -469,6 +469,113 @@
 /* 
     about-1-end
 */
+/* 
+    about-2-start
+*/
+.as-about-2 {
+    &-subtitle {
+        margin-bottom: 95px;
+    }
+    &-wrap {
+        max-width: 1260px;
+        margin-left: auto;
+        display: grid;
+        gap: 90px;
+        grid-template-columns: 1fr 1.05fr;
+
+        @media #{$xl,$lg} {
+            gap: 50px;
+        }
+
+        @media #{$md,$xs} {
+            gap: 50px;
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+
+    &-img {
+        height: 742px;
+        border-radius: 16px;
+
+        @media #{$xs} {
+            height: auto;
+        }
+    }
+
+    &-sec-title {
+        .sec-disc {
+            margin-top: 22px;
+        }
+    }
+
+    &-right-line {
+        width: 100%;
+        height: 1px;
+        background: rgb(29 30 227 / 16%);
+        position: relative;
+        z-index: 1;
+        transform-origin: left;
+
+        &::after {
+            content: "";
+            width: 9px;
+            height: 9px;
+            position: absolute;
+            top: -4px;
+            left: 0;
+            border-radius: 50%;
+            background: var(--as-clr-pr-1);
+            outline: 4px solid rgb(29 30 227 / 16%);
+        }
+        
+        &::before {
+            content: "";
+            width: 100%;
+            height: 1px;
+            position: absolute;
+            top: 0px;
+            left: 100%;
+            border-radius: 50%;
+            background: rgb(29 30 227 / 16%);
+        }
+    }
+
+    &-features {
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+
+        &-single {
+            display: flex;
+            gap: 24px;
+
+            .icon-elm {
+                width: 60px;
+                height: 60px;
+                background-color: #fff;
+                flex: 0 0 auto;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.12);
+            }
+
+            .title {
+                font-size: 22px;
+                margin-bottom: 13px;
+            }
+        }
+    }
+    
+    
+}
+
+/* 
+    about-2-end
+*/
 
 
 

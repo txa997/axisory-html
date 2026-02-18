@@ -201,6 +201,24 @@ window.addEventListener('load', function(){
 		});
 	});
 
+
+    
+    // hero-2-slider
+    if ($('.as_hero2_slider').length) {
+        var as_hero2_slider = new Swiper(".as_hero2_slider", {
+            loop: true,
+            speed: 400,
+            spaceBetween: 0,
+
+            // autoplay: {
+            // 	delay: 5000,
+            // },
+
+
+        });
+
+    }
+
 })
 
 
@@ -421,39 +439,42 @@ if ($('.as_p1_slider_preview').length) {
 
 
 
+if($(".as-testimonial-1-card-all").length) {
+    function initStackCards() {
 
-function initStackCards() {
-
-    const container = document.querySelector('.as-testimonial-1-card-all');
-    const cards = container.querySelectorAll('.as-testimonial-1-card-single');
-
-    const offset = 44; // gap between cards
-    const baseHeight = cards[0].offsetHeight;
-    let maxHeight = 0;
-
-
-    cards.forEach((card, index) => {
-        card.style.bottom = `${index * offset}px`;
-
-        // optional: different background shade
-        // const darkness = 15 + (index * 8);
-        // card.style.backgroundColor = `rgb(${darkness}, ${darkness}, ${darkness + 10})`;
-
-        const cardHeight = card.offsetHeight;
-        if (cardHeight > maxHeight) {
-            maxHeight = cardHeight;
-        }
-
-        card.style.zIndex =  index;
-    });
-
-    const totalHeight = baseHeight + (cards.length - 1) * offset;
-
-    container.style.height = totalHeight + 'px';
+        const container = document.querySelector('.as-testimonial-1-card-all');
+        const cards = container.querySelectorAll('.as-testimonial-1-card-single');
+    
+        const offset = 44; // gap between cards
+        const baseHeight = cards[0].offsetHeight;
+        let maxHeight = 0;
+    
+    
+        cards.forEach((card, index) => {
+            card.style.bottom = `${index * offset}px`;
+    
+            // optional: different background shade
+            // const darkness = 15 + (index * 8);
+            // card.style.backgroundColor = `rgb(${darkness}, ${darkness}, ${darkness + 10})`;
+    
+            const cardHeight = card.offsetHeight;
+            if (cardHeight > maxHeight) {
+                maxHeight = cardHeight;
+            }
+    
+            card.style.zIndex =  index;
+        });
+    
+        const totalHeight = baseHeight + (cards.length - 1) * offset;
+    
+        container.style.height = totalHeight + 'px';
+    }
+    
+    window.addEventListener('load', initStackCards);
+    window.addEventListener('resize', initStackCards);
 }
 
-window.addEventListener('load', initStackCards);
-window.addEventListener('resize', initStackCards);
+
 
 
 

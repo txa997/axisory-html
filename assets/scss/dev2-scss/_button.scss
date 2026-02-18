@@ -150,6 +150,42 @@
 }
 
 
+.as-pr-btn-2 {
+    font-family: var(--as-font-1);
+    background-color: #5758EA;
+    color: #fff;
+    font-weight: 600;
+    line-height: 1.3;
+    border-radius: 8px;
+    padding: 16px 25px;
+    position: relative;
+    z-index: 1;
+    transition: var(--as-cube-1);
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--as-clr-pr-1);
+        z-index: -1;
+        border-radius: 8px 36px;
+        transition: var(--as-cube-1);
+    }
+
+    &:hover {
+        color: #fff;
+
+        &::after {
+            border-radius: 36px 8px ;
+        }
+    }
+}
+
+
+
 .as-plybtn-1 {
     font-size: 16px;
     color: #fff;

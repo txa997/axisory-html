@@ -620,32 +620,71 @@
 */
 
 
+/* 
+    achieve-2-start
+*/
 
-.testimonial-container {
-    position: relative;
-    width: 400px;
-    margin: auto;
-    overflow: hidden;
-  
-    .testimonial-card {
-      background: #fff;
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transform: translateY(-20px); // শুরুতে 20px উপরে থাকবে
-      transition: transform 0.6s ease;
+.as-achieve-2 {
+    &-wrap {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: .72fr 1fr 1fr;
     }
-  }
-  
-  .controls {
-    text-align: center;
-    margin-top: 20px;
-  
-    button {
-      padding: 10px 20px;
-      margin: 0 10px;
-      cursor: pointer;
+    
+    &-client {
+        border: 8px solid #fff;
+        border-radius: 12px;
+        text-align: center;
+        background-color: var(--as-clr-h-1);
+        padding: 35px 32px;
+
+        .disc {
+            color: #fff;
+            opacity: 80%;
+        }
+
+        .number {
+            font-size: 80px;
+            color: #fff;
+            font-weight: 800;
+            line-height: 1;
+            opacity: 20%;
+        }
+
+        .title {
+            font-size: 24px;
+            color: #fff;
+            margin-top: -11px;
+            margin-bottom: 42px;
+        }
+
+        .hr-line {
+            background: radial-gradient(50% 50% at 50% 50%, #8267F8 0%, rgba(77, 61, 146, 0) 100%);
+            height: 2px;
+            width: 100%;
+            margin-bottom: 45px;
+        }
+        
+
+        .author-img {
+            display: inline-flex;
+            margin-bottom: 20px;
+        }
+
+        
+        .author-img-single {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            border: 2px solid #1A0C35;
+        }
     }
-  }
-  
+}
+
+
+
+
+/* 
+    achieve-2-end
+*/
+
