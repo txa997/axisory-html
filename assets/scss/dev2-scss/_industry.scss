@@ -143,3 +143,33 @@
 /* 
     industry-1-end
 */
+
+/* 
+    industry-2-start
+*/
+.as-industry-2 {
+    &-sec-title {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+    
+        @media #{$md,$xs} {
+            flex-wrap: wrap;
+        }
+    
+        .as-sec-title-1 {
+            max-width: 600px;
+        }
+
+        .sec-disc {
+            margin-bottom: 26px;
+        }
+        .right {
+            max-width: 530px;
+        }
+    }
+}
+
+/* 
+    industry-2-end
+*/

@@ -629,6 +629,14 @@
         display: grid;
         gap: 12px;
         grid-template-columns: .72fr 1fr 1fr;
+
+        @media #{$md} {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media #{$xs} {
+            grid-template-columns: 1fr;
+        }
     }
     
     &-client {
@@ -637,6 +645,14 @@
         text-align: center;
         background-color: var(--as-clr-h-1);
         padding: 35px 32px;
+
+        @media #{$xs} {
+            padding: 35px 12px;
+        }
+
+        @media #{$sm} {
+            padding: 35px 32px;
+        }
 
         .disc {
             color: #fff;
@@ -677,8 +693,67 @@
             height: 52px;
             border-radius: 50%;
             border: 2px solid #1A0C35;
+
+            &:not(:first-child) {
+                margin-left: -15px;
+            }
         }
     }
+
+
+    &-card {
+        background-color: #D5D0FF;
+        border-radius: 10px;
+        padding: 40px 40px;
+
+        @media #{$lg,$md,$xs} {
+            padding: 40px 20px;
+        }
+
+        .icon-elm {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.28);
+            border-radius: 10px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 34px;
+            color: var(--as-clr-pr-1);
+            margin-bottom: 68px;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+            border-bottom: 1px solid rgb(5 5 25 / 12%);
+            padding-bottom: 13px;
+            margin-bottom: 25px;
+            letter-spacing: 0.08em;
+            &::after {
+                content: "";
+                width: 90px;
+                height: 2px;
+                background-color: var(--as-clr-pr-1);
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+            }
+        }
+
+        
+        &:is(.has-clr-2) {
+            background-color: #AAE0E3;
+
+            .icon-elm {
+                color: #036F74;
+            }
+        }
+    }
+    
+    
 }
 
 

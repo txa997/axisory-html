@@ -597,3 +597,22 @@ $('.wa_marquee_right_nopause').marquee({
 	duplicated: true,
 	pauseOnHover: false,
 })
+
+
+
+// achieve-2-scroll-animation
+if (window.matchMedia("(min-width: 1200px)").matches) {  
+	let asAh2 = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".as-achieve-2-area",
+			start: "top 100%", 
+            end: "top 20%",
+			toggleActions: "play none none reverse",
+			scrub: true,
+			markers: false,
+		},
+	});
+	
+	asAh2.from(".as-achieve-2-client", {y: -780});
+	asAh2.from(".as-achieve-2-card", { xPercent: -40},"<");
+}
