@@ -207,16 +207,50 @@ window.addEventListener('load', function(){
     if ($('.as_hero2_slider').length) {
         var as_hero2_slider = new Swiper(".as_hero2_slider", {
             loop: true,
-            speed: 400,
+            speed: 500,
             spaceBetween: 0,
 
-            // autoplay: {
-            // 	delay: 5000,
-            // },
+            effect: "fade",
+			fadeEffect: {
+				crossFade: true
+			},
 
+            autoplay: {
+            	delay: 6000,
+            },
+
+            on: {
+                slideChangeTransitionStart: () => {
+                    h2_split_text();
+                },
+            },
 
         });
 
+
+        function h2_split_text() {
+            const currentSlide = document.querySelectorAll('.swiper-slide-active .h2_split_text');
+        
+            const split = new SplitText(currentSlide, { 
+                type: 'lines,words',
+                linesClass: "split-line"
+            });
+        
+            gsap.set(split.words, { 
+                opacity: 0,
+                filter: "blur(5px)",
+            });
+        
+            gsap.to(split.words, {
+                opacity: 1,
+                filter: "blur(0px)",
+                stagger: 0.3,  
+                delay: 0.5,
+                duration: .5,
+            });
+        }
+        
+        h2_split_text();
     }
 
 })
@@ -615,4 +649,93 @@ if (window.matchMedia("(min-width: 1200px)").matches) {
 	
 	asAh2.from(".as-achieve-2-client", {y: -780});
 	asAh2.from(".as-achieve-2-card", { xPercent: -40},"<");
+}
+
+
+if ($(".wa_magnetic_1_trigger").length) {
+    var waMagnets2v2 = document.querySelectorAll('.wa_magnetic_1_trigger');
+    var waStrength2v2 = 30;
+
+    waMagnets2v2.forEach((magnet) => {
+        magnet.addEventListener('mousemove', moveMagnet2);
+        magnet.addEventListener('mouseout', function(event) {
+            const innerElements = event.currentTarget.querySelectorAll('.wa_magnetic_1_elm');
+            innerElements.forEach((elm) => {
+                gsap.to(elm, {
+                    x: 0,
+                    y: 0,
+                    duration: 3,
+                    ease: "ease1"
+                });
+            });
+        });
+    });
+
+    function moveMagnet2(event) {
+        var magnetButton = event.currentTarget;
+        var bounding = magnetButton.getBoundingClientRect();
+        const innerElements = magnetButton.querySelectorAll('.wa_magnetic_1_elm');
+
+        const xMove = (((event.clientX - bounding.left) / magnetButton.offsetWidth) - 0.5) * waStrength2v2;
+        const yMove = (((event.clientY - bounding.top) / magnetButton.offsetHeight) - 0.5) * waStrength2v2;
+
+        innerElements.forEach((elm) => {
+            gsap.to(elm, {
+                x: - xMove,
+                y: - yMove,
+                duration: 3,
+                ease: "ease1"
+            });
+        });
+    }
+}
+
+
+if ($(".wa_magnetic_2_trigger").length) {
+
+    var waMagnets3v3 = document.querySelectorAll('.wa_magnetic_2_trigger');
+    var waStrength3v3 = 30;
+
+    waMagnets3v3.forEach((magnet) => {
+
+        magnet.addEventListener('mousemove', waMoveMagnet3v3);
+
+        magnet.addEventListener('mouseout', function(event) {
+
+            const innerElements = event.currentTarget.querySelectorAll('.wa_magnetic_2_elm');
+
+            innerElements.forEach((elm) => {
+                gsap.to(elm, {
+                    x: 0,
+                    y: 0,
+                    duration: 3,
+                    ease: "power2.out"
+                });
+            });
+
+        });
+
+    });
+
+    function waMoveMagnet3v3(event) {
+
+        var magnetButton = event.currentTarget;
+        var bounding = magnetButton.getBoundingClientRect();
+
+        const innerElements = magnetButton.querySelectorAll('.wa_magnetic_2_elm');
+
+        const xMove = (((event.clientX - bounding.left) / magnetButton.offsetWidth) - 0.5) * waStrength3v3;
+        const yMove = (((event.clientY - bounding.top) / magnetButton.offsetHeight) - 0.5) * waStrength3v3;
+
+        innerElements.forEach((elm) => {
+            gsap.to(elm, {
+                x: xMove,
+                y: yMove,
+                duration: 3,
+                ease: "power2.out"
+            });
+        });
+
+    }
+
 }

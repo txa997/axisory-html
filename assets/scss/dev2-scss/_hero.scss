@@ -336,6 +336,11 @@
         @media #{$sm} {
             font-size: 44px;
         }
+
+
+        .split-line {
+            overflow: visible;
+        }
     }
 
     &-disc {
@@ -420,6 +425,89 @@
             @media #{$md,$xs} {
                 min-height: auto;
                 padding-top: 200px;
+            }
+        }
+
+        .as-hero-2-bg-shape {
+            .shape-line {
+                transform: scale(1.2) rotate(16deg);
+                transform-origin: center;
+                filter: blur(4px);
+                transition: 3s;
+            }
+            .shape-color {
+                opacity: 0;
+                transition: 1s;
+            }
+        }
+
+        .as-hero-2-bg-img {
+            opacity: 0;
+            transition: 1s;
+        }
+
+        .as-hero-2-left {
+            .btn-wrap {
+                opacity: 0;
+                filter: blur(5px);
+                transition: .8s;
+            }
+        }
+
+        .as-hero-2-author {
+            opacity: 0;
+            filter: blur(5px);
+            transition: .8s;
+        }
+
+        .as-hero-2-disc {
+            opacity: 0;
+            filter: blur(5px);
+            transition: .8s;
+        }
+
+        .swiper-slide {
+            &:is(.swiper-slide-active) {
+                .as-hero-2-bg-shape {
+                    .shape-line {
+                        transform: scale(1) rotate(0deg);
+                        filter: blur(0px);
+                        transition-delay: .5s;
+                    }
+
+                    .shape-color {
+                        opacity: 1;
+                        transition-delay: 2.7s;
+                    }
+                }
+
+                .as-hero-2-bg-img {
+                    opacity: 88%;
+                    transition-delay: 2.7s;
+                }
+
+
+                .as-hero-2-left {
+                    .btn-wrap {
+                        opacity: 1;
+                        filter: blur(0px);
+                        transition-delay: 2s;
+                    }
+                }
+        
+                .as-hero-2-author {
+                    opacity: 1;
+                    filter: blur(0px);
+
+                    transition-delay: 2.1s;
+                }
+        
+                .as-hero-2-disc {
+                    opacity: 1;
+                    filter: blur(0px);
+                    transition-delay: 1.8s;
+                }
+        
             }
         }
 
