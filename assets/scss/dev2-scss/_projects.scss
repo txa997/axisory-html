@@ -343,6 +343,235 @@
     
 
 }
+
+
 /* 
     projects-1-end
+*/
+
+/* 
+    projects-2-start
+*/
+.as-projects-2 {
+    &-container {
+        @media #{$over} {
+            margin-left: -258px;
+            margin-right: -258px;
+        }
+    }
+    &-wrap {
+        background-color: var(--as-clr-h-1);
+        display: grid;
+        gap: 60px;
+        grid-template-columns: 1.37fr 1fr;
+
+        @media #{$xl,$lg,$md,$xs} {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &-big-title {
+        text-align: center;
+        font-size: 280px;
+        font-weight: 600;
+        opacity: 7%;
+        line-height: 1;
+        margin-bottom: -110px;
+
+        @media #{$xxxl} {
+            font-size: 210px;
+            margin-bottom: -80px;
+        }
+
+        @media #{$xxl} {
+            font-size: 190px;
+            margin-bottom: -70px;
+        }
+
+        @media #{$xl} {
+            font-size: 170px;
+            margin-bottom: -60px;
+        }
+
+        @media #{$lg} {
+            font-size: 140px;
+            margin-bottom: -40px;
+        }
+
+        @media #{$md} {
+            font-size: 110px;
+            margin-bottom: 0px;
+        }
+
+        @media #{$xs} {
+            font-size: 50px;
+            margin-bottom: 0px;
+        }
+
+        @media #{$sm} {
+            font-size: 80px;
+            margin-bottom: 0px;
+        }
+    }
+
+    &-right {
+        border-left: 1px solid rgb(255 255 255 / 24%);
+        padding-top: 22px;
+
+        
+    }
+
+    &-left {
+        margin: 32px;
+        margin-right: 0;
+        position: relative;
+        z-index: 1;
+        align-self: flex-start;
+
+        @media #{$xl,$lg,$md,$xs} {
+            margin: 20px;
+        }
+    }
+
+    &-item {
+        &-content {
+            border-bottom: 1px solid rgb(255 255 255 / 24%);
+            height: 109px;
+            overflow: hidden;
+            position: relative;
+
+            @media #{$xl,$lg,$md,$xs} {
+                height: auto;
+            }
+
+            .bg-favicon {
+                width: 34%;
+                position: absolute;
+                right: 0;
+                top: 0;
+                pointer-events: none;
+            }
+
+            &-box {
+                padding: 0px 60px;
+                padding-bottom: 40px;
+
+                @media #{$xxxl,$xxl} {
+                    padding: 0px 30px;
+                    padding-bottom: 40px;
+                }
+
+                @media #{$xs} {
+                    padding: 0px 30px;
+                    padding-bottom: 40px;
+                }
+
+                .title {
+                    font-size: 24px;
+                    color: #fff;
+                    font-weight: 400;
+                    padding: 41px 0;
+
+                }
+
+                .item-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 6px;
+                    margin-bottom: 42px;
+
+                    li {
+                        color: #fff;
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 20px;
+                        border-bottom: 1px solid rgb(255 255 255 / 28%);
+                        padding: 8px 0;
+
+                        @media #{$xs} {
+                            flex-wrap: wrap;
+                        }
+
+                        span {
+                            &:nth-child(1) {
+                                opacity: 80%;
+                            }
+                        }
+                    }
+                }
+
+                .disc {
+                    color: #fff;
+                    opacity: 80%;
+                }
+            }
+        }
+
+        &-img {
+            height: 856px;
+
+            @media #{$xxxl,$xxl} {
+                height: 716px;
+            }
+
+            @media #{$xl,$lg,$md,$xs} {
+                height: auto;
+                
+            }
+
+            &-single {
+                height: 100%;
+                border-radius: 12px;
+                position: absolute;
+                inset: 0;
+
+                @media #{$xl,$lg,$md,$xs} {
+                    height: 506px;
+                    position: relative;
+                    margin-bottom: 30px;
+                }
+
+                .tags-list {
+                    position: absolute;
+                    bottom: 32px;
+                    left: 32px;
+                    display: flex;
+                    gap: 6px;
+
+                    @media #{$xl,$lg,$md,$xs} {
+                        flex-wrap: wrap;
+                    }
+
+                    li {
+                        background-color: rgb(255 255 255 / 76%);
+                        border-radius: 6px;
+                        color: var(--as-clr-pr-1);
+                        padding: 6px 17px;
+                        flex: 0 0 auto;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+@media #{$over,$xxxl,$xxl} {
+    .as-projects-2-height {
+        height: 400vh;
+        position: relative;
+    }
+    
+    .as-projects-2-pin {
+        position: sticky;
+        top: 0;
+    }
+}
+
+
+
+
+/* 
+    projects-2-end
 */

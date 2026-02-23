@@ -255,3 +255,112 @@
 /* 
     faqs-1-end
 */
+
+/* 
+    faqs-2-start
+*/
+.as-faqs-2 {
+    &-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1.42fr;
+        gap: 102px;
+
+        @media #{$xl} {
+            gap: 52px;
+        }
+
+        @media #{$lg,$md,$xs} {
+            gap: 52px;
+            grid-template-columns: 1fr;
+        }
+    }
+    &-sec-title {
+        .sec-disc {
+            margin-top: 21px;
+        }
+    }
+
+    &-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 40px;
+
+        .as-hero-2-author {
+            .img-elm {
+                border: 6px solid #fff;
+            }
+
+            .content-wrap {
+                background: #fff;
+            }
+
+            .bio {
+                margin-bottom: 12px;
+            }
+
+            .disc {
+                font-size: 16px;
+                margin-bottom: 23px;
+            }
+        }
+    }
+
+    &-accordion {
+        .as-accordion-1-item {
+            background-color: #F2F1F6;
+            border-radius: 8px;
+            border: 3px solid #fff;
+
+            .item-title {
+                color: var(--as-clr-h-1);
+
+                .icon {
+                    font-size: 12px;
+                    opacity: 1;
+                    width: 28px;
+                    height: 28px;
+                    background-color: #fff;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--as-clr-p-1);
+                    border-radius: 4px;
+                }
+
+                &:is(:not(.collapsed)) {
+                    color: var(--as-clr-h-1);
+                    font-weight: 600;
+
+                    .icon {
+                        color: var(--as-clr-pr-1);
+                        background-color: #D5D0FF;
+
+                    }
+                }
+    
+                &:is(.collapsed) {
+    
+                }
+    
+    
+                &:hover {
+                    
+                }
+            }
+
+            .item-disc {
+                opacity: 1;
+                color: var(--as-clr-p-1);
+            }
+
+            &:is(.active) {
+                background: linear-gradient(180deg, #FFFFFF 0%, #EFF3FF 44.71%, #BECCFF 100%);
+                border-color: #F2F1F6;
+            }
+        }
+    }
+}
+/* 
+    faqs-2-end
+*/

@@ -739,3 +739,49 @@ if ($(".wa_magnetic_2_trigger").length) {
     }
 
 }
+
+if (window.matchMedia("(min-width: 1400px)").matches) {  
+
+    let asProject2 = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".as-projects-2-height",
+            start: "top top", 
+            end: "bottom bottom",
+            toggleActions: "play none none reverse",
+            scrub: true,
+            markers: false,
+        },
+    });
+    
+    asProject2.from(".as-projects-2-item-content:nth-of-type(1)", {height: "496px"});
+    asProject2.to(".as-projects-2-item-content:nth-of-type(2)", {height: "496px"},"<");
+    asProject2.to(".as-projects-2-item-content:nth-of-type(1) .bg-favicon", {opacity: 0},"<");
+    asProject2.from(".as-projects-2-item-content:nth-of-type(2) .bg-favicon", {opacity: 0},"<");
+    asProject2.to(".as-projects-2-item-content:nth-of-type(3)", {height: "496px"});
+    asProject2.to(".as-projects-2-item-content:nth-of-type(2)", {height: "109px"},"<");
+    asProject2.to(".as-projects-2-item-content:nth-of-type(2) .bg-favicon", {opacity: 0},"<");
+    asProject2.from(".as-projects-2-item-content:nth-of-type(3) .bg-favicon", {opacity: 0},"<");
+    asProject2.to(".as-projects-2-item-content:nth-of-type(4)", {height: "496px"});
+    asProject2.to(".as-projects-2-item-content:nth-of-type(3)", {height: "109px"},"<");
+    asProject2.to(".as-projects-2-item-content:nth-of-type(3) .bg-favicon", {opacity: 0},"<");
+    asProject2.from(".as-projects-2-item-content:nth-of-type(4) .bg-favicon", {opacity: 0},"<");
+    
+    
+    let asProject22 = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".as-projects-2-height",
+            start: "top top", 
+            end: "bottom bottom",
+            toggleActions: "play none none reverse",
+            scrub: true,
+            markers: false,
+        },
+    });
+    
+    asProject22.to(".as-projects-2-item-img-single:nth-of-type(4)", {width: 0});
+    asProject22.to(".as-projects-2-item-img-single:nth-of-type(4) .tags-list", {xPercent: -30, opacity: 0},"<");
+    asProject22.to(".as-projects-2-item-img-single:nth-of-type(3)", {width: 0});
+    asProject22.to(".as-projects-2-item-img-single:nth-of-type(3) .tags-list", {xPercent: -30, opacity: 0},"<");
+    asProject22.to(".as-projects-2-item-img-single:nth-of-type(2)", {width: 0});
+    asProject22.to(".as-projects-2-item-img-single:nth-of-type(2) .tags-list", {xPercent: -30, opacity: 0},"<");
+}
