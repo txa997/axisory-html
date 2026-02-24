@@ -785,3 +785,40 @@ if (window.matchMedia("(min-width: 1400px)").matches) {
     asProject22.to(".as-projects-2-item-img-single:nth-of-type(2)", {width: 0});
     asProject22.to(".as-projects-2-item-img-single:nth-of-type(2) .tags-list", {xPercent: -30, opacity: 0},"<");
 }
+
+if (window.matchMedia("(min-width: 1400px)").matches) {  
+
+    let asChoose2card = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".as-choose-2-wrap-right",
+            start: "top 70%", 
+            end: "bottom bottom",
+            toggleActions: "play none none reverse",
+            scrub: false,
+            markers: false,
+        },
+    });
+    
+    asChoose2card.from(".as-choose-2-card", {xPercent: 100, duration: .5});
+    asChoose2card.from(".as-choose-2-card-single.card-4", { x: 0, y: 0, rotate: 0, duration: .5});
+    asChoose2card.from(".as-choose-2-card-single.card-3", { x: 0, y: 0, rotate: 0, duration: .5},"<50%");
+    asChoose2card.from(".as-choose-2-card-single.card-2", { x: 0, y: 0, rotate: 0, duration: .5},"<50%");
+
+}
+
+if (window.matchMedia("(min-width: 1400px)").matches) {  
+
+    let asTestimonial2 = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".as-testimonial-2-height",
+            start: "top top", 
+            end: "bottom bottom",
+            toggleActions: "play none none reverse",
+            scrub: true,
+            markers: false,
+        },
+    });
+    
+    asTestimonial2.from(".as-testimonial-2-card-single", { rotateX: -30, rotateY: 10, rotateZ: -2, y: 400, duration: 1, filter: "blur(10px)", autoAlpha: "auto", stagger: 1});
+
+}

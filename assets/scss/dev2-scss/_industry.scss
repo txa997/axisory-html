@@ -186,6 +186,7 @@
         display: flex;
         align-items: center;
         position: relative;
+        transition: var(--as-cube-1);
 
         @media #{$xl,$lg,$md} {
             gap: 20px;

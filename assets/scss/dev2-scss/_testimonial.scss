@@ -172,3 +172,162 @@
 /* 
     testimonial-1-end
 */
+
+/* 
+    testimonial-2-start
+*/
+.as-testimonial-2 {
+    &-wrap {
+        position: relative;
+        z-index: 1;
+        min-height: 607px;
+    }
+
+
+    &-big-title {
+        text-align: center;
+        font-size: 249px;
+        font-weight: 700;
+        opacity: 6%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        transform: translateY(-50%);
+        z-index: -1;
+
+        @media #{$xxl} {
+            font-size: 220px;
+        }
+
+        @media #{$xl} {
+            font-size: 180px;
+            position: unset;
+            transform: unset;
+        }
+
+        @media #{$lg} {
+            font-size: 140px;
+            position: unset;
+            transform: unset;
+        }
+
+        @media #{$md} {
+            font-size: 110px;
+            position: unset;
+            transform: unset;
+        }
+
+        @media #{$xs} {
+            font-size: 40px;
+            position: unset;
+            transform: unset;
+        }
+
+        @media #{$md} {
+            font-size: 90px;
+            position: unset;
+            transform: unset;
+        }
+    }
+
+
+    &-card {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        position: relative;
+        z-index: 1;
+        
+        perspective: 1200px;
+
+        @media #{$xl,$lg,$md,$xs} {
+            gap: 30px;
+            flex-wrap: wrap;
+            height: auto;
+        }
+
+        &-single {
+            max-width: 516px;
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px 40px;
+
+            @media #{$xl,$lg,$md,$xs} {
+                padding: 40px 20px;
+                max-width: 300px;
+            }
+
+            .rating {
+                font-size: 18px;
+                color: #FFA909;
+                display: flex;
+                gap: 5px;
+                margin-bottom: 20px;
+            }
+
+            .comment {
+                font-size: 28px;
+                font-weight: 400;
+                line-height: 1.428;
+                margin-bottom: 80px;
+
+                @media #{$xl,$lg,$md,$xs} {
+                    font-size: 20px;
+                }
+            }
+
+            .author {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                flex-wrap: wrap;
+
+                &-img {
+                    width: 90px;
+                    height: 90px;
+                    border-radius: 50%;
+                }
+
+                &-name {
+                    font-size: 24px;
+                    margin-bottom: 9px;
+
+                    @media #{$lg,$md,$xs} {
+                        font-size: 20px;
+                    }
+                }
+
+                &-bio {
+                    opacity: 72%;
+                }
+            }
+            
+        }
+    }
+}
+
+
+@media #{$over,$xxxl,$xxl} {
+    .as-testimonial-2-card-single {
+        position: absolute;
+    }
+    
+    .as-testimonial-2-height {
+        height: 300vh;
+        position: relative;
+    }
+    
+    .as-testimonial-2-pin {
+        position: sticky;
+        top: 0;
+    }
+}
+
+
+/* 
+    testimonial-2-end
+*/
