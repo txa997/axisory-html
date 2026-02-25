@@ -215,9 +215,9 @@ window.addEventListener('load', function(){
 				crossFade: true
 			},
 
-            autoplay: {
-            	delay: 6000,
-            },
+            // autoplay: {
+            // 	delay: 6000,
+            // },
 
             on: {
                 slideChangeTransitionStart: () => {
@@ -635,12 +635,12 @@ $('.wa_marquee_right_nopause').marquee({
 
 
 // achieve-2-scroll-animation
-if (window.matchMedia("(min-width: 1200px)").matches) {  
+if (window.matchMedia("(min-width: 1400px)").matches) {  
 	let asAh2 = gsap.timeline({
 		scrollTrigger: {
 			trigger: ".as-achieve-2-area",
 			start: "top 100%", 
-            end: "top 20%",
+            end: "top 0%",
 			toggleActions: "play none none reverse",
 			scrub: true,
 			markers: false,
@@ -648,7 +648,8 @@ if (window.matchMedia("(min-width: 1200px)").matches) {
 	});
 	
 	asAh2.from(".as-achieve-2-client", {y: -780});
-	asAh2.from(".as-achieve-2-card", { xPercent: -40},"<");
+	asAh2.from(".as-achieve-2-card.card-1", { xPercent: -80, autoAlpha: 0});
+	asAh2.from(".as-achieve-2-card.card-2", { xPercent: -100, autoAlpha: 0});
 }
 
 
@@ -755,6 +756,11 @@ if (window.matchMedia("(min-width: 1400px)").matches) {
     
     asProject2.from(".as-projects-2-item-content:nth-of-type(1)", {height: "496px"});
     asProject2.to(".as-projects-2-item-content:nth-of-type(2)", {height: "496px"},"<");
+    asProject2.set(
+        ".as-projects-2-item-content:nth-of-type(1) .title",
+        { toggleClass: "active" },
+        "<"
+    );
     asProject2.to(".as-projects-2-item-content:nth-of-type(1) .bg-favicon", {opacity: 0},"<");
     asProject2.from(".as-projects-2-item-content:nth-of-type(2) .bg-favicon", {opacity: 0},"<");
     asProject2.to(".as-projects-2-item-content:nth-of-type(3)", {height: "496px"});
@@ -899,6 +905,7 @@ asAward2imgAnimation.to(".as-award-2-bg-img img:nth-of-type(2)", {
     duration: .5,
 },"<50%");
 
+
 // process-2-card-animation
 if (window.matchMedia("(min-width: 1400px)").matches) {  
     let asProcess2card = gsap.timeline({
@@ -939,3 +946,65 @@ if (window.matchMedia("(min-width: 1400px)").matches) {
     },"<");
 }
 
+
+// team-2-card-animation
+if (window.matchMedia("(min-width: 1400px)").matches) {  
+    let asTeam2card = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".as-team-2-wrap",
+            start: "top 70%",
+            end: "bottom bottom",
+            toggleActions: "play none none reverse",
+            markers: false,
+        },
+    });
+    
+    asTeam2card.from(".as-team-2-member.has-1", { 
+        xPercent: 100,
+        autoAlpha: 0,
+        duration: .5,
+    });
+    
+    asTeam2card.from(".as-team-2-member.has-4", { 
+        xPercent: -100,
+        autoAlpha: 0,
+        duration: .5,
+    },"<");
+    
+
+}
+
+
+// wa-bg-parallax
+gsap.utils.toArray(".wa_parallax_bg").forEach(element => {
+	gsap.fromTo(
+		element,
+		{ backgroundPosition: "50% 0%" }, 
+		{ 
+			backgroundPosition: "50% 100%", 
+			ease: "none",
+			scrollTrigger: {
+				trigger: element,
+				scrub: 1,    
+				markers: false,  
+			},
+		}
+	);
+});
+
+// wa-parallax-img
+gsap.utils.toArray(".wa_parallax_img").forEach(element => {
+	gsap.fromTo(
+		element,
+		{ objectPosition: "50% 110%" }, 
+		{ 
+			objectPosition: "50% 0%", 
+			ease: "none",
+			scrollTrigger: {
+				trigger: element,
+				scrub: true,    
+				markers: false,     
+			},
+		}
+	);
+});

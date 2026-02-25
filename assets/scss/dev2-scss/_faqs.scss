@@ -275,6 +275,12 @@
         }
     }
     &-sec-title {
+        @media #{$over,$xxxl,$xxl} {
+            position: sticky;
+            top: 100px;
+            margin-bottom: 200px;
+        }
+
         .sec-disc {
             margin-top: 21px;
         }
@@ -285,6 +291,7 @@
         flex-direction: column;
         justify-content: space-between;
         gap: 40px;
+        position: relative;
 
         .as-hero-2-author {
             .img-elm {

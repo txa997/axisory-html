@@ -340,6 +340,10 @@
             background: #fff;
             opacity: 16%;
         }
+
+        &::before {
+            opacity: 16%;
+        }
     }
     
 
@@ -370,9 +374,26 @@
     }
 
     &-accordion {
+        .as-accordion-1 {
+            gap: 0;
+        }
         .as-accordion-1-item {
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.15) 100%);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+            border-radius: 0;
+            position: relative;
+            z-index: 1;
+
+            &::after {
+                content: "";
+                width: 100%;
+                height: 1px;
+                background-color: #fff;
+                opacity: 32%;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                z-index: -1;
+            }
 
             .item-title {
                 font-size: 26px;
@@ -533,6 +554,10 @@
 
             &:is(.active) {
                 background: linear-gradient(180deg, rgba(1, 54, 255, 0.12) 0%, #0136FF 100%);
+                
+                &::after {
+                    opacity: 1;
+                }
             }
         }
     }

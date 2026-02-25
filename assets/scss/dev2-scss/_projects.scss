@@ -376,7 +376,7 @@
         font-weight: 600;
         opacity: 7%;
         line-height: 1;
-        margin-bottom: -110px;
+        margin-bottom: -90px;
 
         @media #{$xxxl} {
             font-size: 210px;
@@ -469,16 +469,8 @@
                 .title {
                     font-size: 24px;
                     color: #fff;
-                    font-weight: 400;
+                    font-weight: 500;
                     padding: 41px 0;
-
-                    a {
-                        transition: var(--as-cube-1);
-
-                        &:hover {
-                            color: var(--as-clr-sd-1);
-                        }
-                    }
                 }
 
                 .item-list {

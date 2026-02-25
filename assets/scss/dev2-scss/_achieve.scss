@@ -646,7 +646,8 @@
         background-color: var(--as-clr-h-1);
         padding: 35px 32px;
         position: relative;
-        z-index: 1;
+        z-index: 2;
+        will-change: transform;
 
         @media #{$xs} {
             padding: 35px 12px;
@@ -712,6 +713,8 @@
         background-color: #D5D0FF;
         border-radius: 10px;
         padding: 40px 40px;
+        position: relative;
+        will-change: transform;
 
         @media #{$lg,$md,$xs} {
             padding: 40px 20px;
@@ -772,6 +775,10 @@
                     background-color: #389195;
                 }
             }
+        }
+
+        &:is(.card-1) {
+            z-index: 1;
         }
     }
     

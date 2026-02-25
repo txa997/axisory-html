@@ -49,7 +49,6 @@
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.16em;
-    border-bottom: 1px solid #fff;
     position: relative;
     z-index: 1;
     margin-bottom: 32px;
@@ -64,6 +63,32 @@
         bottom: -2px;
         left: 0;
         opacity: 16%;
+        transition: 2s;
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+    
+    &::before {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: #fff;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        transition: 2s;
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+
+
+    &:is(.active) {
+        &::after {
+            transform: scaleX(1);
+        }
+        &::before {
+            transform: scaleX(1);
+        }
     }
 }
 
