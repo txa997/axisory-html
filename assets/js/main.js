@@ -756,18 +756,19 @@ if (window.matchMedia("(min-width: 1400px)").matches) {
     
     asProject2.from(".as-projects-2-item-content:nth-of-type(1)", {height: "496px"});
     asProject2.to(".as-projects-2-item-content:nth-of-type(2)", {height: "496px"},"<");
-    asProject2.set(
-        ".as-projects-2-item-content:nth-of-type(1) .title",
-        { toggleClass: "active" },
-        "<"
-    );
+    asProject2.fromTo(".as-projects-2-item-content:nth-of-type(1) .title", {color: "#10ECB0", opacity: 1,},{color: "white", opacity: .8},"<");
+    asProject2.fromTo(".as-projects-2-item-content:nth-of-type(2) .title", {color: "white"},{color: "#10ECB0", opacity: 1},"<");
     asProject2.to(".as-projects-2-item-content:nth-of-type(1) .bg-favicon", {opacity: 0},"<");
     asProject2.from(".as-projects-2-item-content:nth-of-type(2) .bg-favicon", {opacity: 0},"<");
     asProject2.to(".as-projects-2-item-content:nth-of-type(3)", {height: "496px"});
     asProject2.to(".as-projects-2-item-content:nth-of-type(2)", {height: "109px"},"<");
+    asProject2.fromTo(".as-projects-2-item-content:nth-of-type(3) .title", {color: "white"},{color: "#10ECB0", opacity: 1},"<");
+    asProject2.to(".as-projects-2-item-content:nth-of-type(2) .title", {color: "white", opacity: .8},"<");
     asProject2.to(".as-projects-2-item-content:nth-of-type(2) .bg-favicon", {opacity: 0},"<");
     asProject2.from(".as-projects-2-item-content:nth-of-type(3) .bg-favicon", {opacity: 0},"<");
     asProject2.to(".as-projects-2-item-content:nth-of-type(4)", {height: "496px"});
+    asProject2.fromTo(".as-projects-2-item-content:nth-of-type(4) .title", {color: "white"},{color: "#10ECB0", opacity: 1},"<");
+    asProject2.to(".as-projects-2-item-content:nth-of-type(3) .title", {color: "white", opacity: .8},"<");
     asProject2.to(".as-projects-2-item-content:nth-of-type(3)", {height: "109px"},"<");
     asProject2.to(".as-projects-2-item-content:nth-of-type(3) .bg-favicon", {opacity: 0},"<");
     asProject2.from(".as-projects-2-item-content:nth-of-type(4) .bg-favicon", {opacity: 0},"<");
