@@ -169,6 +169,7 @@
 
         .disc {
             color: #fff;
+            opacity: 80%;
         }
 
         .logo-elm {
@@ -340,4 +341,130 @@
 }
 /* 
     footer-1-end
+*/
+/* 
+    footer-2-start
+*/
+.as-footer-2 {
+    &-area {
+        background-color: var(--as-clr-h-1);
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 562px;
+            height: 521.9px;
+            background: #5817AC;
+            opacity: 0.6;
+            filter: blur(177px);
+            top: -90px;
+            left: -160px;
+            z-index: -1;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 562px;
+            height: 521.9px;
+            background: var(--as-clr-pr-1);
+            opacity: 0.6;
+            filter: blur(237px);
+            bottom: -170px;
+            right: -130px;
+            z-index: -1;
+        }
+
+
+        .as-footer-1-social-link {
+            gap: 12px;
+            border: none;
+            .single-link {
+                border-radius: 100px;
+                border: 1px solid rgb(255 255 255 / 24%);
+                padding: 15px 10px;
+
+                &:hover {
+                    border-color: transparent;
+                }
+            }
+        }
+
+    }
+
+    &-big-title {
+        text-align: center;
+        color: rgb(182 182 235);
+        backdrop-filter: blur(12px);
+        font-size: 192px;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 16px;
+
+        @media #{$xxl} {
+            font-size: 165px;
+        }
+
+        @media #{$xl} {
+            font-size: 145px;
+        }
+
+        @media #{$lg} {
+            font-size: 125px;
+        }
+
+        @media #{$md} {
+            font-size: 90px;
+        }
+
+        @media #{$xs} {
+            font-size: 50px;
+        }
+
+        @media #{$sm} {
+            font-size: 70px;
+        }
+    }
+
+    &-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid rgb(255 255 255 / 20%);
+        gap: 20px;
+        flex-wrap: wrap;
+        padding: 23px 0;
+
+        .as-footer-1-copyright {
+            padding: 0;
+        }
+
+        &-link {
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                gap: 10px 24px;
+                flex-wrap: wrap;
+
+                a {
+                    font-family: var(--as-font-2);
+                    color: #fff;
+                    font-size: 16px;
+                    opacity: 72%;
+                    transition: var(--as-cube-1);
+
+                    &:hover {
+                        color: #D5D0FF;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+    }
+}
+/* 
+    footer-2-end
 */

@@ -645,6 +645,8 @@
         text-align: center;
         background-color: var(--as-clr-h-1);
         padding: 35px 32px;
+        position: relative;
+        z-index: 1;
 
         @media #{$xs} {
             padding: 35px 12px;
@@ -693,9 +695,14 @@
             height: 52px;
             border-radius: 50%;
             border: 2px solid #1A0C35;
+            transition: var(--as-cube-1);
 
             &:not(:first-child) {
                 margin-left: -15px;
+            }
+
+            &:hover {
+                transform: scale(1.1);
             }
         }
     }
@@ -740,6 +747,15 @@
                 position: absolute;
                 bottom: -1px;
                 left: 0;
+                transition: var(--as-cube-1);
+            }
+        }
+
+        &:hover {
+            .title {
+                &::after {
+                    width: 100%;
+                }
             }
         }
 
@@ -749,6 +765,12 @@
 
             .icon-elm {
                 color: #036F74;
+            }
+
+            .title {
+                &::after {
+                    background-color: #389195;
+                }
             }
         }
     }

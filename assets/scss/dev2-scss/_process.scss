@@ -156,6 +156,15 @@
         .as-sec-title-1 {
             margin-bottom: 22px;
         }
+
+        .as-pr-btn-2 {
+            background: #464654;
+            color: #fff;
+
+            &::after {
+                background-color: var(--as-clr-h-1);
+            }
+        }
     }
 
 
@@ -165,6 +174,18 @@
         gap: 12px;
         position: relative;
         z-index: 1;
+
+        @media #{$md} {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @media #{$xs} {
+            grid-template-columns: 1fr;
+        }
+
+        @media #{$sm} {
+            grid-template-columns: 1fr 1fr ;
+        }
     }
 
     &-card {
@@ -176,6 +197,10 @@
         z-index: 1;
         overflow: hidden;
         border-radius: 20px;
+
+        @media #{$md,$xs} {
+            min-height: auto;
+        }
 
         .icon-x-number {
             display: flex;
@@ -226,6 +251,10 @@
             inset: 0;
             z-index: -1;
 
+            @media #{$xl,$lg,$md,$xs} {
+                display: none;
+            }
+
             img {
                 height: 100%;
             }
@@ -246,6 +275,10 @@
         bottom: 0;
         left: 0;
         z-index: -1;
+
+        @media #{$lg,$md,$xs} {
+            height: 446px;
+        }
     }
     
     
@@ -258,11 +291,6 @@
     z-index: 1;
 
 }
-
-.as-process-2-card-x-hand {
-    position: relative;
-}
-
 
 
 
@@ -272,22 +300,40 @@
     z-index: 1;
     opacity: 0;
     overflow: hidden;
+    background-color: #fff;
+    border-radius: 20px;
 
+    @media #{$xl,$lg,$md,$xs} {
+        display: none;
+    }
     img {
         position: absolute;
         height: 100%;
     }
 
     .left-hand {
-        left: 0;
-        transform: translateX(-47px);
+        left: -58px;
     }
 
     .right-hand {
-        right: 0;
-        transform: translateX(14px);
+        right: -91px;
+        top: -26px;
     }
 }
+
+
+@media #{$over,$xxxl,$xxl} {
+    .as-process-2-height {
+        height: 500vh;
+        position: relative;
+    }
+    
+    .as-process-2-pin {
+        position: sticky;
+        top: 0;
+    }
+}
+
 
 /* 
     process-2-end

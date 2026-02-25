@@ -822,3 +822,120 @@ if (window.matchMedia("(min-width: 1400px)").matches) {
     asTestimonial2.from(".as-testimonial-2-card-single", { rotateX: -30, rotateY: 10, rotateZ: -2, y: 400, duration: 1, filter: "blur(10px)", autoAlpha: "auto", stagger: 1});
 
 }
+
+
+
+// counter-2-animation
+let asCounter2 = gsap.timeline({
+	scrollTrigger: {
+		trigger: ".as-counter-2-item",
+        top: "top 80%",
+		toggleActions: "play none none reverse",
+		markers: false,
+	},
+});
+
+asCounter2.from(".as-counter-2-item .dot-line", { 
+    width: 0,
+    duration: 2,
+    stagger: 0.1
+});
+
+asCounter2.from(".as-counter-2-item .number-x-disc", { 
+    yPercent: -130,
+    duration: 1,
+    stagger: 0.1
+},"<40%");
+
+
+
+// industry-2-cursor-follow
+if($(".as-industry-2-item").length) {
+	const featureItems = document.querySelectorAll(".as-industry-2-item");
+
+	featureItems.forEach((featureItem) => {
+		const flair = featureItem.querySelector(".cursor-follow");
+	
+		gsap.set(flair, { scale: 0, opacity: 0, xPercent: -50, yPercent: -10 });
+	
+		featureItem.addEventListener("mouseenter", () => {
+			gsap.to(flair, { scale: 1, opacity: 1, duration: 0.4, ease: "power3.out" });
+		});
+
+
+		featureItem.addEventListener("mousemove", (e) => {
+			const rect = featureItem.getBoundingClientRect();
+			const x = e.clientX - rect.left;
+			const y = e.clientY - rect.top;
+			gsap.to(flair, { x, y, duration: 0.1 });
+		});
+	
+		featureItem.addEventListener("mouseleave", () => {
+			gsap.to(flair, { scale: 0, opacity: 0, duration: 0.4, ease: "power3.in" });
+		});
+	});
+	
+}
+
+
+// award-2-img-animation
+let asAward2imgAnimation = gsap.timeline({
+	scrollTrigger: {
+		trigger: ".as-award-2-bg-img",
+        start: "top 50%",
+        end: "top 0%",
+		toggleActions: "play none none reverse",
+		markers: false,
+	},
+});
+
+asAward2imgAnimation.to(".as-award-2-bg-img img:nth-of-type(1)", { 
+    opacity: 0,
+    duration: .5,
+});
+
+asAward2imgAnimation.to(".as-award-2-bg-img img:nth-of-type(2)", { 
+    opacity: 1,
+    duration: .5,
+},"<50%");
+
+// process-2-card-animation
+if (window.matchMedia("(min-width: 1400px)").matches) {  
+    let asProcess2card = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".as-process-2-height",
+            start: "top top",
+            end: "bottom bottom",
+            toggleActions: "play none none reverse",
+            scrub: true,
+            markers: false,
+        },
+    });
+    
+    asProcess2card.from(".as-process-2-card", { 
+        yPercent: 60,
+        autoAlpha: 0,
+        stagger: .5,
+    });
+    
+    asProcess2card.to(".as-process-2-card .hand-img", { 
+        opacity: 0,
+    });
+    
+    asProcess2card.to(".as-process-2-hand", { 
+        opacity: 1,
+    },"<");
+    
+    asProcess2card.to(".as-process-2-card", { 
+        background: "transparent",
+    },"<");
+    
+    asProcess2card.to(".as-process-2-hand .left-hand", { 
+        x: 40,
+    },"<");
+    
+    asProcess2card.to(".as-process-2-hand .right-hand", { 
+        x: -40,
+    },"<");
+}
+

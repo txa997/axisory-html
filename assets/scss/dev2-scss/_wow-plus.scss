@@ -127,3 +127,16 @@
     }
   }
 }
+
+.as-img-ani-2 {
+  img {
+    transition: 15s;
+    transform: scale(1.1);
+  }
+
+  &:is(.active) {
+    img {
+      transform: scale(1);
+    }
+  }
+}
