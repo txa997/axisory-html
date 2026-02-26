@@ -215,9 +215,9 @@ window.addEventListener('load', function(){
 				crossFade: true
 			},
 
-            // autoplay: {
-            // 	delay: 6000,
-            // },
+            autoplay: {
+            	delay: 6000,
+            },
 
             on: {
                 slideChangeTransitionStart: () => {
